@@ -1,0 +1,25 @@
+.footer {
+  background-color: #34d1c9;
+  color: white;
+  padding: 1rem;
+  position: relative;
+}
+
+.footer-text {
+  text-align: center;
+  position: relative;
+}
+
+.admin-link {
+  position: absolute;
+  right: 0;
+}
+
+.admin-link a {
+  color: white;
+  text-decoration: none;
+}
+
+.admin-link a:hover {
+  text-decoration: underline;
+}

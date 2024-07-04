@@ -1,0 +1,96 @@
+.company-history {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .history-buttons {
+    margin-bottom: 2rem;
+  }
+  
+  .history-buttons button {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .timeline {
+    position: relative;
+    width: 100%;
+  }
+  
+  .timeline-event {
+    position: relative;
+    width: 30%;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  .timeline-event.left {
+    left: 20%; /* 중앙 선에 더 가깝게 배치 */
+    text-align: left;
+  }
+  
+  .timeline-event.right {
+    left: 50%;
+    text-align: left;
+  }
+  
+  .timeline-event .timeline-content {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left; /* 왼쪽 정렬 */
+    width: calc(100% - 30px); /* 적절한 너비 설정 */
+  }
+  
+  .timeline-event.left .timeline-content {
+    margin-left: auto;
+    padding-right: 10px; /* 오른쪽 여백 추가 */
+  }
+  
+  .timeline-event.right .timeline-content {
+    margin-left: auto;
+    padding-left: 10px; /* 왼쪽 여백 추가 */
+  }
+  
+  .timeline-event h3 {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .timeline-event ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .timeline-event ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 20px;
+  }
+  
+  .timeline-event ul li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #009688; /* 민트색 */
+  }
+  
+  /* Timeline vertical line */
+  .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #009688;
+  }
+  
