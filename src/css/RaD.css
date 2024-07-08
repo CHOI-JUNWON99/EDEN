@@ -1,0 +1,57 @@
+.main-page {
+    text-align: center;
+  }
+  
+  .hero-section {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem; /* 폰트 크기를 조절 */
+    font-weight: bold; /* 폰트 두께를 설정 */
+  }
+  
+  .main-content {
+    background: #fbfbfc; /* 배경 색상 설정 */
+    padding: 1rem; /* 내부 여백 설정 */
+    box-shadow: 0 2px 4px rgba(145, 144, 144, 0.1); /* 그림자 설정 */
+    position: relative; /* 상대 위치 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    color: #ffffff; /* 텍스트 색상 설정 */
+  }
+  
+  .research-table {
+    margin: 20px auto;
+    max-width: 1200px;
+    overflow-x: auto;
+  }
+  
+  .research-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .research-table th, .research-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .research-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .research-table td img {
+    max-width: 100px;
+    height: auto;
+  }
+  

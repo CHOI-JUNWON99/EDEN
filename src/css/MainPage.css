@@ -55,6 +55,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
 }
 
 .company-message-image {
@@ -166,9 +167,22 @@ h6 {
 
 .main-content {
   background: #fbfbfc; /* 배경 색상 설정 */
-  padding: 1rem; /* 내부 여백 설정 */
+  padding: 2rem 0; /* 내부 여백 설정 */
   box-shadow: 0 2px 4px rgba(145, 144, 144, 0.1); /* 그림자 설정 */
   position: relative; /* 상대 위치 설정 */
   text-align: center; /* 텍스트 가운데 정렬 */
-  color: #d31c1c; /* 텍스트 색상 설정 */
+  color: #000000; /* 텍스트 색상 설정 */
+  margin-top: -1px; /* 상단 여백 제거 */
+}
+
+.hero-section {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* 텍스트 색상을 흰색으로 설정 */
+  text-align: center; /* 텍스트를 가운데 정렬 */
 }

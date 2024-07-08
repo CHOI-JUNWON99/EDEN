@@ -20,7 +20,14 @@ function MainPage() {
           <p>㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고</p> 
           <p>우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.</p>
           <div className="vision-video">
-              <ReactPlayer url="path/to/video.mp4" controls width="1100px" height="700px" />
+              <ReactPlayer 
+                url={`${process.env.PUBLIC_URL}/EDEN_1080.mp4`} 
+                controls 
+                width="1100px" 
+                height="700px" 
+                playing 
+                loop 
+              />
           </div>
           <p>㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.</p>
           <p>미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.</p>

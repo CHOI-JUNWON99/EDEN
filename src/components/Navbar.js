@@ -10,7 +10,7 @@ function Navbar() {
         <Toolbar className="navbar-toolbar">
           <div className="navbar-left">
             <Link to="/" className="navbar-logo">
-              <img src="/Company.logo.jpg" alt="Company Logo" />
+              <img src="/eden_front.png" alt="Company Logo" />
             </Link>
             <Link to="/" className="navbar-logo1">
               <img src="/EDEN.logo.png" alt="Company Logo" />
@@ -23,6 +23,7 @@ function Navbar() {
                 <Link to="/CompanyMessage">인사말</Link>
                 <Link to="/CompanyHistory">회사연혁</Link>
                 <Link to="/PatentsCertifications">특허 및 인증서</Link>
+                <Link to="/Test">회사연혁 테스트</Link>
               </div>
             </div>
             <div className="navbar-item">
@@ -59,13 +60,13 @@ function Navbar() {
               </div>
             </div>
             <div className="navbar-item">
-              <Button color="inherit">R&D</Button>
+              <Button color="inherit" component={Link} to="/RaD">R&D</Button>
             </div>
             <div className="navbar-item">
-              <Button color="inherit">환경뉴스</Button>
+              <Button color="inherit" component={Link} to="/NewsList">환경뉴스</Button>
             </div>
             <div className="navbar-item">
-              <Button color="inherit">견적의뢰</Button>
+              <Button color="inherit" component={Link} to="/RequestForm">견적의뢰</Button>
             </div>
           </div>
           <div className="navbar-right">
