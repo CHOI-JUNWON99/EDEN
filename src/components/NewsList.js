@@ -12,22 +12,22 @@ const NewsList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      const fetchNews = async () => {
-          const q = query(collection(db, 'news'), orderBy('created_at', 'desc'));
-          const querySnapshot = await getDocs(q);
-          const newsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          setNews(newsList);
-      };
+    const fetchNews = async () => {
+      const q = query(collection(db, 'news'), orderBy('created_at', 'desc'));
+      const querySnapshot = await getDocs(q);
+      const newsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setNews(newsList);
+    };
 
-      fetchNews();
+    fetchNews();
   }, []);
 
   const handleSearch = (e) => {
-      setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value);
   };
 
-  const filteredNews = news.filter(article => 
-      article.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredNews = news.filter(article =>
+    article.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const indexOfLastNews = currentPage * newsPerPage;
@@ -40,11 +40,15 @@ const NewsList = () => {
     navigate('/add-news');
   };
 
+  const handleNewsClick = (id) => {
+    navigate(`/news/${id}`);
+  };
+
   return (
     <div className="news-container">
-      <section 
+      <section
         className="hero-section"
-        style={{ 
+        style={{
           backgroundImage: `url(${process.env.PUBLIC_URL + '/News6.png'})`,
           width: '100%',
           height: '500px',
@@ -60,17 +64,17 @@ const NewsList = () => {
         <h1>환경 뉴스</h1>
       </section>
       <div className="search-and-add">
-        <input 
-          type="text" 
-          placeholder="검색" 
-          value={searchTerm} 
-          onChange={handleSearch} 
+        <input
+          type="text"
+          placeholder="검색"
+          value={searchTerm}
+          onChange={handleSearch}
           className="search-input"
         />
         <button onClick={handleAddNewsClick} className="add-news-button">글쓰기</button>
       </div>
       {filteredNews.length > 0 && (
-        <div className="latest-news">
+        <div className="latest-news" onClick={() => handleNewsClick(filteredNews[0].id)}>
           <div className="latest-news-content">
             <img src={filteredNews[0].main_image} alt={filteredNews[0].title} className="latest-news-image" />
             <div className="latest-news-text">
@@ -91,7 +95,7 @@ const NewsList = () => {
       <div className="news-grid">
         {currentNews.map((article, index) => (
           index !== 0 && (
-            <div key={article.id} className="news-item">
+            <div key={article.id} className="news-item" onClick={() => handleNewsClick(article.id)}>
               <img src={article.main_image} alt={article.title} />
               <h3>{article.title}</h3>
               <p>{article.preview.slice(0, 75)}</p>

@@ -13,6 +13,7 @@ import Test from './components/Test';
 import NewsList from './components/NewsList';
 import AddNews from './components/AddNews';
 import uploadImage from './components/uploadImage';
+import NewsView from './components/NewsView';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/AddNews" element={<AddNews />} />
           <Route path="/add-news" element={<AddNews />} />
           <Route path="/uploadImage" element={<uploadImage />} />
+          <Route path="/news/:id" element={<NewsView />} /> {/* 추가된 부분 */}
           {/* 다른 페이지 라우트를 여기에 추가 */}
         </Routes>
         <Footer />

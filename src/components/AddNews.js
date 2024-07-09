@@ -42,6 +42,7 @@ const AddNews = () => {
       await addDoc(collection(db, 'news'), {
         title,
         author,
+        password,
         content,
         created_at: Timestamp.fromDate(new Date()),
         likes: 0,
