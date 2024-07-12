@@ -23,38 +23,37 @@ function Navbar() {
                 <Link to="/CompanyMessage">인사말</Link>
                 <Link to="/CompanyHistory">회사연혁</Link>
                 <Link to="/PatentsCertifications">특허 및 인증서</Link>
-                <Link to="/Test">회사연혁 테스트</Link>
               </div>
             </div>
             <div className="navbar-item">
               <Button color="inherit">기술분야</Button>
               <div className="navbar-dropdown">
                 <div className="navbar-subitem">
-                  <Link to="/technology/field1">수질</Link>
+                  <Link to="/WaterQuality">수질</Link>
                   <div className="navbar-subdropdown">
-                    <Link to="/technology/field1/EmSbr">EM-SBR</Link>
-                    <Link to="/technology/field1/EmMbr">EM-MBR</Link>
-                    <Link to="/technology/field1/EmNprs">EM-NPRS</Link>
-                    <Link to="/technology/field1/EmPwt">EM-PWT</Link>
+                    <Link to="/technology/F1/EmSbr">EM-SBR</Link>
+                    <Link to="/technology/F1/EmMbr">EM-MBR</Link>
+                    <Link to="/technology/F1/EmNprs">EM-NPRS</Link>
+                    <Link to="/technology/F1/EmPwt">EM-PWT</Link>
                   </div>
                 </div>
                 <div className="navbar-subitem">
-                  <Link to="/technology/field2">대기</Link>
+                  <Link to="/Atmosphere">대기</Link>
                   <div className="navbar-subdropdown">
-                    <Link to="/technology/field2/BioFilter">BIOFILTER</Link>
-                    <Link to="/technology/field2/MultyScrubber">MULTY SCRUBBER</Link>
-                    <Link to="/technology/field2/Srs">SRS</Link>
-                    <Link to="/technology/field2/Tos">TOS</Link>
+                    <Link to="/technology/F2/BioFilter">BIOFILTER</Link>
+                    <Link to="/technology/F2/MultyScrubber">MULTY SCRUBBER</Link>
+                    <Link to="/technology/F2/Srs">SRS</Link>
+                    <Link to="/technology/F2/Tos">TOS</Link>
                   </div>
                 </div>
                 <div className="navbar-subitem">
-                  <Link to="/technology/field3">제품소개</Link>
+                  <Link to="/technology/F3/DrumScreen">제품소개</Link>
                   <div className="navbar-subdropdown">
-                    <Link to="/technology/field3/DrumScreen">DRUM SCREEN</Link>
-                    <Link to="/technology/field3/UvSterilizer">UV소독기</Link>
-                    <Link to="/technology/field3/ElectricPrecipitator">전기집진기</Link>
-                    <Link to="/technology/field3/LinkConveyor">링크 컨베이어</Link>
-                    <Link to="/technology/field3/PostTreatmentFilter">후처리필터</Link>
+                    <Link to="/technology/F3/DrumScreen">DRUM SCREEN</Link>
+                    <Link to="/technology/F3/UvSystem">UV소독기</Link>
+                    <Link to="/technology/F3/Electric">전기집진기</Link>
+                    <Link to="/technology/F3/Link">링크 컨베이어</Link>
+                    <Link to="/technology/F3/PostTreat">후처리필터</Link>
                   </div>
                 </div>
               </div>

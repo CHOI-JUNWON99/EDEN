@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import '../css/PatentsCertifications.css';
-import { Pix } from '@mui/icons-material';
 
 const certificates = [
   { name: '사업자등록증', img: '/Certification1/1-1-1.jpg' },
@@ -76,7 +75,7 @@ const PatentsCertifications = () => {
           <section className="intellectual-property-stats">
             <div className="stat">
               <h2>특허 보유 수</h2>
-              <p>: 16</p>
+              <p>16</p>
             </div>
           </section>
           <p>2024.01.01 기준</p>
@@ -84,8 +83,8 @@ const PatentsCertifications = () => {
       </header>
       <section className="certificates">
         <h2>특허 및 인증서</h2>
-        <div className="content">
-          <p>[사업자 등록증 및 보유면허 및 인증현황]</p>
+        <div className="patents-buttons">
+          <button> 사업자 등록증 및 보유면허 및 인증현황 </button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">
@@ -114,8 +113,8 @@ const PatentsCertifications = () => {
 
       <section className="certificates">
         <div>ㅤ</div>
-        <div className="content">
-          <p>[특허]</p>
+        <div className="patents-buttons">
+          <button> 특 허 </button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">

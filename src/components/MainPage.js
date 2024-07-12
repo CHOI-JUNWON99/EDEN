@@ -1,13 +1,14 @@
 import React from 'react';
-import { Container, Grid, Button } from '@mui/material';
+import { Container, Grid, Button} from '@mui/material';
 import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 import '../css/MainPage.css';
 
 function MainPage() {
   return (
     <div className="main-page">
       <section className="hero-section" style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage1.png'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage2.png'})`,
         width: '100%',
         height: '600px',
         backgroundSize: 'cover',
@@ -40,13 +41,13 @@ function MainPage() {
             <h6>WATER</h6>
             <div>ㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button">수처리시설 설계</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 설계</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">수처리시설 시공</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 시공</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">수처리시설 관리</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 관리</Button>
             </Grid>
           </Grid>
           <Grid container spacing={2} justifyContent="center">
@@ -54,25 +55,25 @@ function MainPage() {
             <h6>AIR</h6>
             <div>ㅤㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button">대기오염 방지시설 설계</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 설계</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">대기오염 방지시설 시공</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 시공</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">대기오염 방지시설 관리</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 관리</Button>
             </Grid>
           </Grid>
           <Grid container spacing={2} justifyContent="center">
             <h6>CONSTRUCTION</h6>
             <Grid item>
-              <Button variant="contained" className="service-button">토목공사업</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/Construction">토목공사업</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">상하수도설비공사업</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">상하수도설비공사업</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button">기계설비공사업</Button>
+              <Button variant="contained" className="service-button" component={Link} to="/">기계설비공사업</Button>
             </Grid>
           </Grid>
         </section>
@@ -93,6 +94,7 @@ function MainPage() {
               <p>F. 02-2047-0989</p>
               <p>E. edenep@naver.com</p>
             </Grid>
+            <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
             <Grid item>
             <div className="h8">Pyeongtaek Factory</div>
               <iframe

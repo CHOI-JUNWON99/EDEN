@@ -7,9 +7,9 @@ function CompanyMessage() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/hello.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/CompanyMessage0.png'})`,
           width: '100%',
-          height: '250px',
+          height: '600px',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -24,6 +24,8 @@ function CompanyMessage() {
    <div className="company-message">
       <img src={process.env.PUBLIC_URL + '/CompanyMessage2.png'} alt="Company Message" className="company-message-image" />
     </div>
+    <div>ㅤ</div>
+    <div>ㅤ</div>
     </div>
   );
 }

@@ -154,3 +154,13 @@
     padding: 0.5rem 1rem; /* 내부 여백 설정 */
     color: #0a0707; /* 텍스트 색상 설정 */
 }
+
+.patents-buttons button {
+    margin: 0 1rem;
+    padding: 0.7rem;
+    background-color: #b4b8b7;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* 둥근 버튼으로 변경 */
+  }

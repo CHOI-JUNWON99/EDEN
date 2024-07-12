@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { db } from './firebase';
-import { uploadImage } from '../components/uploadImage'; // 수정된 파일 임포트
+import { uploadImage } from '../components/uploadImage';
 import '../css/News.css';
-import { useNavigate } from 'react-router-dom';
-import { Grid, Button } from '@mui/material';
+import { useNavigate, Link} from 'react-router-dom';
+import { Button } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const AddNews = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [password, setPassword] = useState('');
   const [content, setContent] = useState('');
-  const [mainImageUrl, setMainImageUrl] = useState('');
   const [images, setImages] = useState([]);
   const navigate = useNavigate();
+  const textareaRef = useRef(null);
 
   const handlePaste = async (e) => {
     const clipboardData = e.clipboardData || window.clipboardData;
@@ -23,8 +25,11 @@ const AddNews = () => {
         const file = items[i].getAsFile();
         if (file) {
           const imageUrl = await uploadImage(file);
+          const cursorPosition = textareaRef.current.selectionStart;
+          const textBeforeCursor = content.substring(0, cursorPosition);
+          const textAfterCursor = content.substring(cursorPosition);
           setImages((prevImages) => [...prevImages, imageUrl]);
-          setContent((prevContent) => `${prevContent}\n![image](${imageUrl})\n`);
+          setContent(`${textBeforeCursor}\n![image](${imageUrl})\n${textAfterCursor}`);
         }
       }
     }
@@ -61,39 +66,55 @@ const AddNews = () => {
   };
 
   return (
-    <div className="add-news-container">
+    <div className="news-view-container">
       <h2>뉴스 추가하기</h2>
       <input
         type="text"
         placeholder="제목"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="textarea-main"
+        className="edit-title-input"
       />
       <input
         type="text"
         placeholder="작성자"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
-        className="textarea-main"
+        className="edit-title-input"
       />
       <input
         type="password"
         placeholder="비밀번호"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="textarea-main"
+        className="edit-title-input"
       />
       <textarea
         placeholder="내용(이미지 첨부 시 첫번째 이미지가 메인 이미지로 설정됩니다.)"
         value={content}
         onChange={(e) => setContent(e.target.value)}
         onPaste={handlePaste}
-        className="textarea-content"
+        className="edit-content-textarea"
+        ref={textareaRef}
       />
-      <Grid item>
-        <Button onClick={handleAddNews} className="button">글쓰기</Button>
-      </Grid>
+      <div className="content-preview" style={{ textAlign: 'left', whiteSpace: 'pre-wrap' }}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            img: ({ node, ...props }) => (
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <img {...props} alt="markdown image" className="content-img" />
+              </div>
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      </div>
+      <div className="buttons-container">
+      <Button color="inherit" onClick={handleAddNews}>저장</Button>
+      <Button color="inherit" component={Link} to="/NewsList">취소</Button>
+      </div>
     </div>
   );
 };

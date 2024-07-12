@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { doc, getDoc, updateDoc, deleteDoc, increment, collection, addDoc, getDocs, Timestamp } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, deleteDoc, increment, Timestamp } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db } from './firebase';
 import { Button } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import '../css/News.css';
 
 const NewsView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [news, setNews] = useState(null);
-  const [password, setPassword] = useState('');
-  const [comment, setComment] = useState('');
-  const [commentPassword, setCommentPassword] = useState('');
-  const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState(0);
-  const [isEditing, setIsEditing] = useState(false);
-  const [editTitle, setEditTitle] = useState('');
-  const [editContent, setEditContent] = useState('');
+  const [editMode, setEditMode] = useState(false);
+  const [editedContent, setEditedContent] = useState('');
+  const [editedTitle, setEditedTitle] = useState('');
+  const textareaRef = useRef(null);
+  const previewLength = 200; // 글자 수 제한
 
   useEffect(() => {
     let isMounted = true;
@@ -28,24 +29,14 @@ const NewsView = () => {
         if (isMounted) {
           setNews(docSnap.data());
           setLikes(docSnap.data().likes);
-          setEditTitle(docSnap.data().title);
-          setEditContent(docSnap.data().content);
+          setEditedContent(docSnap.data().content);
+          setEditedTitle(docSnap.data().title);
           await updateDoc(docRef, { views: increment(1) });
         }
       }
     };
 
-    const fetchComments = async () => {
-      const commentsRef = collection(db, 'news', id, 'comments');
-      const commentsSnapshot = await getDocs(commentsRef);
-      const commentsList = commentsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      if (isMounted) {
-        setComments(commentsList);
-      }
-    };
-
     fetchNews();
-    fetchComments();
 
     return () => {
       isMounted = false;
@@ -56,27 +47,6 @@ const NewsView = () => {
     const docRef = doc(db, 'news', id);
     await updateDoc(docRef, { likes: increment(1) });
     setLikes(likes + 1);
-  };
-
-  const handleCommentSubmit = async () => {
-    if (comment.trim() && commentPassword.trim()) {
-      const commentsRef = collection(db, 'news', id, 'comments');
-      await addDoc(commentsRef, { text: comment, password: commentPassword, created_at: new Date(), deleted: false });
-      setComments([...comments, { id: (await getDocs(commentsRef)).docs.at(-1).id, text: comment, password: commentPassword, created_at: new Date(), deleted: false }]);
-      setComment('');
-      setCommentPassword('');
-    }
-  };
-
-  const handleCommentDelete = async (commentId, commentPassword) => {
-    const inputPassword = prompt('댓글 비밀번호를 입력하세요:');
-    if (inputPassword === commentPassword) {
-      const commentRef = doc(db, 'news', id, 'comments', commentId);
-      await updateDoc(commentRef, { deleted: true });
-      setComments(comments.map(comment => comment.id === commentId ? { ...comment, deleted: true } : comment));
-    } else {
-      alert('비밀번호가 일치하지 않습니다.');
-    }
   };
 
   const handleDelete = async () => {
@@ -93,49 +63,123 @@ const NewsView = () => {
   const handleUpdate = async () => {
     const passwordPrompt = prompt('비밀번호를 입력하세요:');
     if (passwordPrompt === news.password) {
-      setIsEditing(true);
+      setEditMode(true);
     } else {
       alert('비밀번호가 일치하지 않습니다.');
     }
   };
 
-  const handleSaveUpdate = async () => {
-    if (editTitle.trim() && editContent.trim()) {
-      const docRef = doc(db, 'news', id);
-      await updateDoc(docRef, {
-        title: editTitle,
-        content: editContent,
-        updated_at: Timestamp.fromDate(new Date())
-      });
-      setNews({
-        ...news,
-        title: editTitle,
-        content: editContent,
-        updated_at: Timestamp.fromDate(new Date())
-      });
-      setIsEditing(false);
+  const handleSave = async () => {
+    const docRef = doc(db, 'news', id);
+    const updatedContent = editedContent;
+    const mainImage = (updatedContent.match(/!\[image\]\((.*?)\)/) || [])[1] || '';
+
+    await updateDoc(docRef, {
+      title: editedTitle,
+      content: updatedContent,
+      main_image: mainImage,
+      updated_at: Timestamp.fromDate(new Date())
+    });
+
+    setNews(prev => ({
+      ...prev,
+      title: editedTitle,
+      content: updatedContent,
+      main_image: mainImage
+    }));
+    setEditMode(false);
+    alert('게시물이 성공적으로 수정되었습니다.');
+  };
+
+  const handlePaste = async (e) => {
+    const clipboardData = e.clipboardData || window.clipboardData;
+    const items = clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf('image') !== -1) {
+        const file = items[i].getAsFile();
+        if (file) {
+          const imageUrl = await uploadImage(file);
+          const cursorPosition = textareaRef.current.selectionStart;
+          const textBeforeCursor = editedContent.substring(0, cursorPosition);
+          const textAfterCursor = editedContent.substring(cursorPosition);
+          setEditedContent(`${textBeforeCursor}\n![image](${imageUrl})\n${textAfterCursor}`);
+        }
+      }
     }
+  };
+
+  const uploadImage = async (file) => {
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${Date.now()}_${file.name}`);
+
+    try {
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      return url;
+    } catch (error) {
+      console.error('Error uploading image: ', error);
+      return '';
+    }
+  };
+
+  const renderPreviewContent = (content, length) => {
+    // 이미지 URL을 제거하고 글자를 제한하는 로직
+    let preview = content;
+    const imageRegex = /!\[image\]\((.*?)\)/;
+    const imageMatch = content.match(imageRegex);
+
+    if (imageMatch) {
+      preview = content.replace(imageRegex, '');
+      if (preview.length > length) {
+        preview = preview.slice(0, length) + '...';
+      }
+      preview = `![image](${imageMatch[1]})\n\n${preview}`;
+    } else {
+      if (content.length > length) {
+        preview = content.slice(0, length) + '...';
+      }
+    }
+
+    return (
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ node, ...props }) => (
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img {...props} alt="markdown image" style={{ maxWidth: '100%' }} />
+            </div>
+          ),
+        }}
+      >
+        {preview}
+      </ReactMarkdown>
+    );
   };
 
   return (
     <div className="news-view-container">
       {news && (
         <>
-          {isEditing ? (
+          {editMode ? (
             <>
               <input
                 type="text"
-                value={editTitle}
-                onChange={(e) => setEditTitle(e.target.value)}
-                className="textarea-main"
+                value={editedTitle}
+                onChange={(e) => setEditedTitle(e.target.value)}
+                className="edit-title-input"
               />
               <textarea
-                value={editContent}
-                onChange={(e) => setEditContent(e.target.value)}
-                className="textarea-content"
+                value={editedContent}
+                onChange={(e) => setEditedContent(e.target.value)}
+                onPaste={handlePaste}
+                className="edit-content-textarea"
+                ref={textareaRef}
               />
-              <Button onClick={handleSaveUpdate}>저장</Button>
-              <Button onClick={() => setIsEditing(false)}>취소</Button>
+              <div className="content-preview" style={{ textAlign: 'left', whiteSpace: 'pre-wrap' }}>
+                {renderPreviewContent(editedContent, previewLength)}
+              </div>
+              <Button color="inherit" onClick={handleSave}>저장</Button>
+              <Button color="inherit" onClick={() => setEditMode(false)}>취소</Button>
             </>
           ) : (
             <>
@@ -145,9 +189,20 @@ const NewsView = () => {
                 <p>작성일: {new Date(news.created_at.seconds * 1000).toLocaleString()}</p>
                 <p>조회수: {news.views}</p>
                 <p>추천수: {likes}</p>
-                <p>댓글수: {comments.length}</p>
               </div>
-              <div className="content" style={{ textAlign: 'left' }} dangerouslySetInnerHTML={{ __html: news.content }} />
+              <div className="content" style={{ textAlign: 'left', whiteSpace: 'pre-wrap' }}>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]} 
+                  components={{
+                    img: ({ node, ...props }) => (
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <img {...props} alt="markdown image" style={{ maxWidth: '100%' }} />
+                      </div>
+                    )
+                  }}>
+                  {news.content}
+                </ReactMarkdown>
+              </div>
               <div className="buttons-container">
                 <Button color="inherit" component={Link} to="/NewsList">목록보기</Button>
                 <Button color="inherit" onClick={handleLike}>추천</Button>
@@ -156,31 +211,6 @@ const NewsView = () => {
               </div>
             </>
           )}
-          <div className="comments-section">
-            <h3>댓글</h3>
-            <div className="comments-list">
-              {comments.map((comment) => (
-                <div key={comment.id} className="comment-item">
-                  {comment.deleted ? '삭제된 메시지입니다' : comment.text}
-                  {!comment.deleted && (
-                    <button onClick={() => handleCommentDelete(comment.id, comment.password)}>삭제</button>
-                  )}
-                </div>
-              ))}
-            </div>
-            <textarea
-              placeholder="댓글을 입력하세요..."
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="댓글 비밀번호"
-              value={commentPassword}
-              onChange={(e) => setCommentPassword(e.target.value)}
-            />
-            <button onClick={handleCommentSubmit}>댓글 등록</button>
-          </div>
         </>
       )}
     </div>
