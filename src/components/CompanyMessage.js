@@ -15,7 +15,7 @@ function CompanyMessage() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          color: 'black',
+          color: 'white',
           textAlign: 'center'
         }}
       >

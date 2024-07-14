@@ -1,8 +1,7 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import '../css/Water.css';
 
-function Construction() {
-
+function WaterSewerage() {
   useEffect(() => {
     window.scrollTo(0, 0);  // 페이지 최상단으로 스크롤
   }, []);
@@ -10,36 +9,39 @@ function Construction() {
   return (
     <div className="water-treatment-page">
       <section className="intro-section">
-        <h2>토목공사업</h2>
-        <p>㈜에덴은 토목공사업에서 다년간의 경험과 전문성을 보유하고 있습니다. 우리는 고품질의 토목공사 서비스를 제공하여 인프라 개선 및 도시 개발에 기여합니다.</p>
+        <h2>상하수도 설비공사업</h2>
+        <p>㈜에덴은 상하수도 설비공사업에서 뛰어난 기술력과 풍부한 경험을 보유하고 있습니다. <br/>우리는 다양한 프로젝트를 통해 고품질의 상하수도 설비를 구축하여 <br/>깨끗한 물 공급과 위생적인 하수 처리를 보장합니다.</p>
       </section>
       <section className="image-grid">
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>인프라 개선</p>
+          <p>깨끗한 물 공급</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>도시 개발 지원</p>
+          <p>위생적인 하수 처리</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>최신 토목 기술 적용</p>
+          <p>최신 설비 기술 적용</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>환경 친화적 시공 방법</p>
+          <p>환경 규제 준수</p>
         </div>
       </section>
+      <div style={{justifyContent: 'center',textAlign: 'center'}}>
+        <h2>공사 실적</h2>
+      </div>
       <div>ㅤ</div>
       <div>ㅤ</div>
       <div className="company-message">
-      <img src={process.env.PUBLIC_URL + '/Construction.png'} alt="Company Message" className="company-message-image" />
-    </div>
+        <img src={process.env.PUBLIC_URL + '/WaterSewerage.png'} alt="Company Message" className="company-message-image" />
+      </div>
       <div>ㅤ</div>
       <div>ㅤ</div>
     </div>
   );
 }
 
-export default Construction;
+export default WaterSewerage;

@@ -29,6 +29,15 @@ import PostTreat from './components/technology/F3/PostTreat';
 import WaterQuality from './components/WaterQuality';
 import Atmosphere from './components/Atmosphere';
 import Construction from './components/Construction';
+import WaterManagement from './components/WaterManagement';
+import WaterDesign from './components/WaterDesign';
+import WaterConstruction from './components/WaterConstruction';
+import AirManagement from './components/AirManagement';
+import AirDesign from './components/AirDesign';
+import AirConstruction from './components/AirConstruction';
+import MechanicalEquipment from './components/MechanicalEquipment';
+import WaterSewerage from './components/WaterSewerage';
+import NavConstruction from './components/NavConstruction';
 
 function App() {
   return (
@@ -63,6 +72,15 @@ function App() {
           <Route path="/WaterQuality" element={<WaterQuality />} />
           <Route path="/Atmosphere" element={<Atmosphere />} />
           <Route path="/Construction" element={<Construction />} />
+          <Route path="/WaterManagement" element={<WaterManagement />} />
+          <Route path="/WaterDesign" element={<WaterDesign />} />
+          <Route path="/WaterConstruction" element={<WaterConstruction />} />
+          <Route path="/AirManagement" element={<AirManagement />} />
+          <Route path="/AirDesign" element={<AirDesign />} />
+          <Route path="/AirConstruction" element={<AirConstruction />} />
+          <Route path="/MechanicalEquipment" element={<MechanicalEquipment />} />
+          <Route path="/WaterSewerage" element={<WaterSewerage />} />
+          <Route path="/NavConstruction" element={<NavConstruction />} />
           {/* 다른 페이지 라우트를 여기에 추가 */}
         </Routes>
         <Footer />

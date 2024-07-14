@@ -1,8 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function WaterQuality() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  // 페이지 최상단으로 스크롤
+  }, []);
+
   return (
     <div>
+      <section 
+        className="hero-section"
+        style={{ 
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/water.png'})`,
+          width: '100%',
+          height: '400px',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'black',
+          textAlign: 'center',
+          position: 'relative'
+        }}
+      >
+      <h2 style={{color: 'white'}}>㈜에덴은 첨단 수질 관리 솔루션을 통해 오염된 물을<br/>깨끗하게 정화하여 건강한 수자원을 보존하는 데 기여하고 있습니다.<br/>우리 회사는 다양한 수질 정화 기술을 활용하여 산업 폐수, 생활 하수 등을 효과적으로 처리하고 있으며,<br/> 이를 통해 깨끗한 물 환경을 유지하는 데 최선을 다하고 있습니다.</h2>
+      </section>
+      <div style={{justifyContent: 'center',textAlign: 'center'}}>
+        <h2>공사 실적</h2>
+      </div>
       <section className="research-table">
         <table>
           <thead>

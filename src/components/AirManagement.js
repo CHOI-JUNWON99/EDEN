@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import '../css/Water.css';
 
-function Construction() {
+function WaterManagement() {
 
   useEffect(() => {
     window.scrollTo(0, 0);  // 페이지 최상단으로 스크롤
@@ -10,36 +10,29 @@ function Construction() {
   return (
     <div className="water-treatment-page">
       <section className="intro-section">
-        <h2>토목공사업</h2>
-        <p>㈜에덴은 토목공사업에서 다년간의 경험과 전문성을 보유하고 있습니다. 우리는 고품질의 토목공사 서비스를 제공하여 인프라 개선 및 도시 개발에 기여합니다.</p>
+        <h2>대기오염 방지시설 관리</h2>
+        <p>㈜에덴은 대기오염 방지시설의 효율적이고 지속 가능한 운영을 위해<br/> 체계적인 관리 서비스를 제공합니다. 정기적인 점검, 유지보수 및 문제 해결을 포함하여<br/> 고객의 대기오염 방지시설이 항상 최상의 상태를 유지할 수 있도록 지원합니다.</p>
       </section>
       <section className="image-grid">
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>인프라 개선</p>
+          <p>정기적인 점검 및 유지보수</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>도시 개발 지원</p>
+          <p>신속한 문제 해결</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>최신 토목 기술 적용</p>
+          <p>운영 효율성 극대화</p>
         </div>
         <div className="image-item">
           <div className="image-placeholder">사진 준비 중..</div>
-          <p>환경 친화적 시공 방법</p>
+          <p>고객 맞춤형 관리 서비스</p>
         </div>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
-      <div className="company-message">
-      <img src={process.env.PUBLIC_URL + '/Construction.png'} alt="Company Message" className="company-message-image" />
     </div>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
-    </div>
-  );
-}
-
-export default Construction;
+   );
+  }
+  
+  export default WaterManagement;

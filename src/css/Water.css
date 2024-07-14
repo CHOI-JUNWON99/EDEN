@@ -1,0 +1,79 @@
+.water-treatment-page {
+    font-family: 'Arial', sans-serif;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .intro-section {
+    margin-bottom: 3rem;
+  }
+  
+  .intro-section h2 {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .image-item {
+    width: calc(50% - 2rem);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  .image-placeholder {
+    background-color: #ddd;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .image-item p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .image-item {
+      width: 100%;
+    }
+  }
+  
+  .company-message {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+  }
+  
+  .company-message-image {
+    width: 100%;
+    max-width: 1000px; /* 원하는 최대 너비로 설정 */
+    height: auto; /* 비율을 유지하면서 높이를 자동으로 조절 */
+  }

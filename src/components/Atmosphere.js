@@ -6,6 +6,28 @@ import ReactPlayer from 'react-player';
 function Atmosphere() {
   return (
     <div>
+      <section 
+        className="hero-section"
+        style={{ 
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/Air.png'})`,
+          width: '100%',
+          height: '400px',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'black',
+          textAlign: 'center',
+          position: 'relative'
+        }}
+      >
+        
+      <h2 style={{color: 'white'}}>㈜에덴은 대기 오염을 최소화하기 위한 다양한 기술과 솔루션을 제공하여<br/>깨끗한 공기를 유지하는 데 기여하고 있습니다.<br/>우리는 첨단 대기 정화 기술을 적용하여 <br/>산업 현장에서 발생하는 다양한 오염 물질을 효율적으로 제거하고 있습니다.</h2>
+      </section>
+      <div style={{justifyContent: 'center',textAlign: 'center'}}>
+        <h2>공사 실적</h2>
+      </div>
       <section className="research-table">
         <table>
           <thead>

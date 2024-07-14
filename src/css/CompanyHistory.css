@@ -1,20 +1,21 @@
 .company-history {
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 
 .history-buttons {
-  margin-bottom: 2rem;
+  margin-bottom: 0.2rem;
 }
 
 .history-buttons button {
-  margin: 0 1rem;
+  margin:  0.5rem;
   padding: 0.5rem 1rem;
   background-color: #009688;
   color: #fff;
   border: none;
   cursor: pointer;
-  border-radius: 20px; /* 둥근 버튼으로 변경 */
+  border-radius: 20px;
 }
 
 .timeline {
@@ -24,45 +25,39 @@
 
 .timeline-event {
   position: relative;
-  width: 45%; /* 박스 너비를 넓혀 글씨가 짤리지 않도록 조정 */
-  padding: 2rem; /* 내부 여백을 늘려 글씨가 짤리지 않도록 조정 */
+  width: 35%;
+  padding: 2rem;
   box-sizing: border-box;
   text-align: left;
-  margin-bottom: 3rem; /* 요소 간 간격 추가 */
+  margin-bottom: 3rem;
 }
 
 .timeline-event.left {
-  left: 10%; /* 중앙 선에 더 가깝게 배치 */
+  left: 50%;
+  transform: translateX(-110%); /* 중앙 선에서 10px 떨어지게 조정 */
   text-align: left;
 }
 
 .timeline-event.right {
-  left: 45%;
+  left: 50%;
+  transform: translateX(10%); /* 중앙 선에서 10px 떨어지게 조정 */
   text-align: left;
 }
 
 .timeline-event .timeline-content {
-  padding: 2rem;
-  background-size: cover; /* 배경 이미지 크기 조절 */
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: #e0f7fa;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   position: relative;
   text-align: left;
-  width: 100%;
-  border: 2px solid #009688; /* 민트색 테두리 */
-}
-
-.timeline-event.left .timeline-content {
-  background-image: url('/public/left_leaf.png'); /* 왼쪽 나뭇잎 이미지 */
-}
-
-.timeline-event.right .timeline-content {
-  background-image: url('/public/right_leaf.png'); /* 오른쪽 나뭇잎 이미지 */
+  width: calc(100% - 30px);
+  border: 2px solid #009688;
 }
 
 .timeline-event h3 {
   margin: 0 0 1rem 0;
-  color: #00796b; /* 진한 민트색 */
+  color: #00796b;
 }
 
 .timeline-event ul {
@@ -72,42 +67,75 @@
 }
 
 .timeline-event ul li {
-  margin-bottom: 0.75rem; /* 리스트 항목 간 간격 조정 */
+  margin-bottom: 0.75rem;
   position: relative;
-  padding-left: 25px; /* 리스트 아이템에 여백 추가 */
-  color: #004d40; /* 짙은 민트색 */
+  padding-left: 25px;
+  color: #004d40;
 }
 
 .timeline-event ul li:before {
   content: '•';
   position: absolute;
   left: 0;
-  color: #009688; /* 민트색 */
+  color: #009688;
 }
 
-/* Timeline vertical line */
+/* Central stem line */
 .timeline:before {
   content: '';
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
+  width: 15px;
   height: 100%;
   background: #009688;
+}
+
+/* Branch lines */
+.timeline-event.left:before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px; /* 중앙 선에서 박스까지의 거리 조정 */
+  height: 4px;
+  background: #009688;
+}
+
+.timeline-event.right:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px; /* 중앙 선에서 박스까지의 거리 조정 */
+  height: 4px;
+  background: #009688;
+}
+
+.timeline-event.left:before {
+  right: -65px; /* 선이 중앙 줄기와 이어지도록 위치 수정 */
+}
+
+.timeline-event.right:before {
+  left: -65px; /* 선이 중앙 줄기와 이어지도록 위치 수정 */
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .timeline-event {
-      width: 80%;
-  }
-
-  .timeline-event.left, .timeline-event.right {
-      left: 10%;
+    width: 80%;
+    left: 10% !important;
+    text-align: center;
   }
 
   .timeline:before {
-      left: 10%;
+    left: 10%;
+  }
+
+  .timeline-event.left:before,
+  .timeline-event.right:before {
+    width: 10%;
+    left: -10%;
   }
 }

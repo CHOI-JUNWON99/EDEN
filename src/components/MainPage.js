@@ -1,10 +1,16 @@
 import React from 'react';
-import { Container, Grid, Button} from '@mui/material';
+import { Container, Grid, Button } from '@mui/material';
 import ReactPlayer from 'react-player';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../css/MainPage.css';
 
 function MainPage() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="main-page">
       <section className="hero-section" style={{ 
@@ -41,13 +47,13 @@ function MainPage() {
             <h6>WATER</h6>
             <div>ㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 설계</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterDesign')}>수처리시설 설계</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 시공</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterConstruction')}>수처리시설 시공</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">수처리시설 관리</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterManagement')}>수처리시설 관리</Button>
             </Grid>
           </Grid>
           <Grid container spacing={2} justifyContent="center">
@@ -55,25 +61,25 @@ function MainPage() {
             <h6>AIR</h6>
             <div>ㅤㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 설계</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirDesign')}>대기오염 방지시설 설계</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 시공</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirConstruction')}>대기오염 방지시설 시공</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">대기오염 방지시설 관리</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirManagement')}>대기오염 방지시설 관리</Button>
             </Grid>
           </Grid>
           <Grid container spacing={2} justifyContent="center">
             <h6>CONSTRUCTION</h6>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/Construction">토목공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/Construction')}>토목공사업</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">상하수도설비공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterSewerage')}>상하수도설비공사업</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" component={Link} to="/">기계설비공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/MechanicalEquipment')}>기계설비공사업</Button>
             </Grid>
           </Grid>
         </section>

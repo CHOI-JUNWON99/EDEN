@@ -56,6 +56,9 @@ function Navbar() {
                     <Link to="/technology/F3/PostTreat">후처리필터</Link>
                   </div>
                 </div>
+                <div className="navbar-subitem">
+                  <Link to="/NavConstruction">토목공사</Link>
+                </div>
               </div>
             </div>
             <div className="navbar-item">

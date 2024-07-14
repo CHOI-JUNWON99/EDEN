@@ -139,40 +139,40 @@ const events = [
 ];
 
 const CompanyHistory = () => {
-    const scrollToYear = (year) => {
-      const element = document.getElementById(`year-${year}`);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
-  
-    return (
-      <div className="company-history">
-        <div className="history-buttons">
-          <button onClick={() => scrollToYear(2002)}>2002년~2010년</button>
-          <button onClick={() => scrollToYear(2011)}>2011년~2020년</button>
-          <button onClick={() => scrollToYear(2021)}>2021년~현재</button>
-        </div>
-        <div className="timeline">
-          {events.map((event, index) => (
-            <div
-              key={event.year}
-              id={`year-${event.year}`}
-              className={`timeline-event ${index % 2 === 0 ? 'left' : 'right'}`}
-            >
-              <div className="timeline-content">
-                <h3>{event.year}년</h3>
-                <ul>
-                  {event.achievements.map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
+  const scrollToYear = (year) => {
+    const element = document.getElementById(`year-${year}`);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-  
-  export default CompanyHistory;
+
+  return (
+    <div className="company-history">
+      <div className="history-buttons">
+        <button onClick={() => scrollToYear(2002)}>2002년~2010년</button>
+        <button onClick={() => scrollToYear(2011)}>2011년~2020년</button>
+        <button onClick={() => scrollToYear(2021)}>2021년~현재</button>
+      </div>
+      <div className="timeline">
+        {events.map((event, index) => (
+          <div
+            key={event.year}
+            id={`year-${event.year}`}
+            className={`timeline-event ${index % 2 === 0 ? 'right' : 'left'}`}
+          >
+            <div className="timeline-content">
+              <h3>{event.year}년</h3>
+              <ul>
+                {event.achievements.map((achievement, i) => (
+                  <li key={i}>{achievement}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CompanyHistory;

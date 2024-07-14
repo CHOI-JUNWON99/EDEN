@@ -84,7 +84,7 @@ const PatentsCertifications = () => {
       <section className="certificates">
         <h2>특허 및 인증서</h2>
         <div className="patents-buttons">
-          <button> 사업자 등록증 및 보유면허 및 인증현황 </button>
+          <button>ㅤ 사업자 등록증 및 보유면허 및 인증현황 ㅤ</button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">
@@ -114,7 +114,7 @@ const PatentsCertifications = () => {
       <section className="certificates">
         <div>ㅤ</div>
         <div className="patents-buttons">
-          <button> 특 허 </button>
+          <button>ㅤ    특 허    ㅤ</button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">
