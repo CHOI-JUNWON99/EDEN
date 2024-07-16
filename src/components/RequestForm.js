@@ -15,33 +15,26 @@ function RequestForm() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('견적 요청이 성공적으로 제출되었습니다!');
-        // 여기에 백엔드로 폼 데이터를 전송하는 로직을 추가할 수 있습니다.
-        // 예를 들어, Firebase에 데이터를 저장하거나 이메일로 전송하는 코드를 추가합니다.
-        // 지금은 백엔드가 필요하지 않다고 하셔서 주석 처리해둡니다.
-        // 백엔드가 준비되면 아래 코드를 사용하세요.
-
-        // fetch('/api/send-email', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(formData)
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     console.log('Success:', data);
-        //     alert('견적 요청이 성공적으로 제출되었습니다!');
-        // })
-        // .catch((error) => {
-        //     console.error('Error:', error);
-        //     alert('견적 요청 제출에 실패했습니다.');
-        // });
-
-        // 폼 데이터 초기화
-        setFormData({ subject: '', name: '', phone: '', email: '', message: '' });
+        try {
+            const response = await fetch('https://us-central1-eandtech-f8efe.cloudfunctions.net/sendEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            if (response.ok) {
+                alert('견적 요청이 성공적으로 제출되었습니다!');
+                setFormData({ subject: '', name: '', phone: '', email: '', message: '' });
+            } else {
+                alert('견적 요청 제출에 실패했습니다.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('견적 요청 제출에 실패했습니다.');
+        }
     };
 
     return (

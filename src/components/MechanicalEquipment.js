@@ -15,26 +15,26 @@ function MechanicalEquipment() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="최신 기계 설비 기술 적용" className="image"/>
           <p>최신 기계 설비 기술 적용</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="안정적이고 효율적인 설비 구축" className="image"/>
           <p>안정적이고 효율적인 설비 구축</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="철저한 현장 관리" className="image"/>
           <p>철저한 현장 관리</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="고객 맞춤형 시공 서비스" className="image"/>
           <p>고객 맞춤형 시공 서비스</p>
         </div>
       </section>
       <div>ㅤ</div>
       <div>ㅤ</div>
       <div className="company-message">
-      <img src={process.env.PUBLIC_URL + '/Mechanical.png'} alt="Company Message" className="company-message-image" />
+      <img src={process.env.PUBLIC_URL + '/Mechanical.webp'} alt="Company Message" className="company-message-image" />
     </div>
       <div>ㅤ</div>
       <div>ㅤ</div>

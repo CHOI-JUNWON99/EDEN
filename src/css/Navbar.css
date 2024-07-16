@@ -4,6 +4,8 @@
   margin: 0; /* 외부 여백을 없앰 */
   padding: 0; /* 내부 여백을 없앰 */
   box-sizing: border-box; /* 패딩과 테두리를 포함하여 너비와 높이 계산 */
+  background-color: #ffffff;
+  color: #ffffff;
 }
 
 /* 네비게이션 바의 배경색 설정 */
@@ -12,6 +14,7 @@
   width: 100vw; /* 너비를 100vw로 설정하여 화면 전체를 차지하게 함 */
   margin: 0; /* 외부 여백을 없앰 */
   padding: 0; /* 내부 여백을 없앰 */
+  color: #ffffff;
 }
 
 /* 네비게이션 바의 툴바 설정 */
@@ -23,6 +26,7 @@
   background-color: #ffffff; /* 배경색을 흰색으로 설정 */
   padding: 0 1rem; /* 좌우에 1rem 패딩 설정 */
   margin: 0; /* 외부 여백을 없앰 */
+  background-color: #ffffff;
 }
 
 /* 네비게이션 바의 좌측과 우측 설정 */
@@ -55,6 +59,7 @@
 .navbar button, .navbar a, .navbar .MuiButton-root {
   color: #000000; /* 텍스트 색상을 검정으로 설정 */
   margin: 0 0.5rem; /* 좌우에 0.5rem 마진 설정 */
+ 
 }
 
 /* 메뉴 아이템의 루트 스타일 설정 */
@@ -66,6 +71,11 @@
 .navbar-item {
   position: relative; /* 상대 위치 설정 */
   display: inline-block; /* 인라인 블록 요소로 설정 */
+}
+
+.navbar-button {
+  font-size: 1.2rem !important; /* 폰트 크기 설정 */
+  font-weight: bold !important; /* 폰트 두께 설정 */
 }
 
 /* 드롭다운 및 서브드롭다운 설정 */

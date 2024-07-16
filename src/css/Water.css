@@ -22,6 +22,12 @@
     margin: 0 auto;
     max-width: 800px;
   }
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
   
   .image-grid {
     display: flex;

@@ -14,19 +14,19 @@ function WaterSewerage() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="깨끗한 물 공급" className="image"/>
           <p>깨끗한 물 공급</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="위생적인 하수 처리" className="image"/>
           <p>위생적인 하수 처리</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="최신 설비 기술 적용" className="image"/>
           <p>최신 설비 기술 적용</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="환경 규제 준수" className="image"/>
           <p>환경 규제 준수</p>
         </div>
       </section>
@@ -36,7 +36,7 @@ function WaterSewerage() {
       <div>ㅤ</div>
       <div>ㅤ</div>
       <div className="company-message">
-        <img src={process.env.PUBLIC_URL + '/WaterSewerage.png'} alt="Company Message" className="company-message-image" />
+        <img src={process.env.PUBLIC_URL + '/WaterSewerage.webp'} alt="Company Message" className="company-message-image" />
       </div>
       <div>ㅤ</div>
       <div>ㅤ</div>

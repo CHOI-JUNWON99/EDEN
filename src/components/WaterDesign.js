@@ -15,19 +15,19 @@ function WaterDesign() {
         </section>
         <section className="image-grid">
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-1.webp" alt="맞춤형 설계 솔루션 제공" className="image"/>
             <p>맞춤형 설계 솔루션 제공</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-2.webp" alt="최신 기술 도입" className="image"/>
             <p>최신 기술 도입</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-3.webp" alt="효율적이고 경제적인 설계" className="image"/>
             <p>효율적이고 경제적인 설계</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-4.webp" alt="환경 규제 준수" className="image"/>
             <p>환경 규제 준수</p>
           </div>
         </section>

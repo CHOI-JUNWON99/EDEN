@@ -15,19 +15,19 @@ function AirConstruction() {
         </section>
         <section className="image-grid">
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-1.webp" alt="철저한 현장 관리" className="image"/>
             <p>철저한 현장 관리</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/air2-2.webp" alt="최신 시공 기술 적용" className="image"/>
             <p>최신 시공 기술 적용</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-1.webp" alt="환경 친화적 시공 방법" className="image"/>
             <p>환경 친화적 시공 방법</p>
           </div>
           <div className="image-item">
-            <div className="image-placeholder">사진 준비 중..</div>
+          <img src="/MainPageOurService/water1-1.webp" alt="고객 맞춤형 시공 서비스" className="image"/>
             <p>고객 맞춤형 시공 서비스</p>
           </div>
         </section>

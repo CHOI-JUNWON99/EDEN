@@ -5,7 +5,7 @@ function EmPwt() {
       <div>
       <div>ㅤ</div>
       <section style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-PWT.jpg'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-PWT.webp'})`,
         width: "100%",
         height: '1500px', // 동영상과 비슷한 높이로 설정
         backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기

@@ -18,7 +18,7 @@ function Navbar() {
           </div>
           <div className="navbar-center">
             <div className="navbar-item">
-              <Button color="inherit">회사소개</Button>
+              <Button color="inherit" className="navbar-button">회사소개</Button>
               <div className="navbar-dropdown">
                 <Link to="/CompanyMessage">인사말</Link>
                 <Link to="/CompanyHistory">회사연혁</Link>
@@ -26,7 +26,7 @@ function Navbar() {
               </div>
             </div>
             <div className="navbar-item">
-              <Button color="inherit">기술분야</Button>
+              <Button color="inherit" className="navbar-button">기술분야</Button>
               <div className="navbar-dropdown">
                 <div className="navbar-subitem">
                   <Link to="/WaterQuality">수질</Link>
@@ -62,19 +62,19 @@ function Navbar() {
               </div>
             </div>
             <div className="navbar-item">
-              <Button color="inherit" component={Link} to="/RaD">R&D</Button>
+              <Button color="inherit" className="navbar-button" component={Link} to="/RaD">R&D</Button>
             </div>
             <div className="navbar-item">
-              <Button color="inherit" component={Link} to="/NewsList">환경뉴스</Button>
+              <Button color="inherit" className="navbar-button" component={Link} to="/NewsList">환경뉴스</Button>
             </div>
             <div className="navbar-item">
-              <Button color="inherit" component={Link} to="/RequestForm">견적의뢰</Button>
+              <Button color="inherit" className="navbar-button" component={Link} to="/RequestForm">견적의뢰</Button>
             </div>
           </div>
           <div className="navbar-right">
-            <Button color="inherit" component={Link} to="/en">EN</Button>
+            <Button color="inherit" component={Link} to="/eng">ENG</Button>
             <Button color="inherit" component={Link} to="/cn">中文</Button>
-            <Button color="inherit" component={Link} to="/ko">한국어</Button>
+            <Button color="inherit" component={Link} to="/kor">한국어</Button>
             <div>ㅤ</div>
           </div>
         </Toolbar>

@@ -7,7 +7,7 @@ function NavConstruction() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/NavConstruction.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/NavConstruction.webp'})`,
           width: '100%',
           height: '400px',
           backgroundSize: 'cover',
@@ -20,7 +20,7 @@ function NavConstruction() {
           position: 'relative'
         }}
       >
-      <h2 style={{color: 'white'}}>㈜에덴은 토목공사업에서 다년간의 경험과 전문성을 보유하고 있습니다.<br/> 우리는 고품질의 토목공사 서비스를 제공하여 인프라 개선 및 도시 개발에 기여합니다.</h2>
+      <h6 style={{color: 'white'}}>㈜에덴은 토목공사업에서 다년간의 경험과 전문성을 보유하고 있습니다.<br/> 우리는 고품질의 토목공사 서비스를 제공하여 인프라 개선 및 도시 개발에 기여합니다.</h6>
       </section>
       <div style={{justifyContent: 'center',textAlign: 'center'}}>
         <h2>공사 실적</h2>

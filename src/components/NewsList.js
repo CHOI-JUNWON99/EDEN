@@ -9,7 +9,7 @@ const NewsList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [newsPerPage] = useState(6); // 아래에 표시될 뉴스의 수
-  const [latestPreviewLength, setLatestPreviewLength] = useState(515); // latest preview 길이 조절
+  const [latestPreviewLength] = useState(515); // latest preview 길이 조절
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const NewsList = () => {
       <section
         className="hero-section"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/News6.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/News6.webp'})`,
           width: '100%',
           height: '500px',
           backgroundSize: 'cover',
@@ -87,7 +87,7 @@ const NewsList = () => {
         <div className="latest-news" onClick={() => handleNewsClick(filteredNews[0].id)}>
           <div className="latest-news-content">
             <img 
-              src={filteredNews[0].main_image || `${process.env.PUBLIC_URL}/NewsDefault.png`} 
+              src={filteredNews[0].main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`} 
               alt={filteredNews[0].title} 
               className="latest-news-image" 
             />
@@ -110,7 +110,7 @@ const NewsList = () => {
         {currentNews.map((article) => (
           <div key={article.id} className="news-item" onClick={() => handleNewsClick(article.id)}>
             <img 
-              src={article.main_image || `${process.env.PUBLIC_URL}/NewsDefault.png`} 
+              src={article.main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`} 
               alt={article.title} 
             />
             <h3>{article.title}</h3>

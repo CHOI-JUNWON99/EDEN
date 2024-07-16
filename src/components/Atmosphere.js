@@ -1,6 +1,4 @@
 import React from 'react';
-import { Container } from '@mui/material';
-import ReactPlayer from 'react-player';
 
 
 function Atmosphere() {
@@ -9,7 +7,7 @@ function Atmosphere() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/Air.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/Air.webp'})`,
           width: '100%',
           height: '400px',
           backgroundSize: 'cover',
@@ -23,7 +21,7 @@ function Atmosphere() {
         }}
       >
         
-      <h2 style={{color: 'white'}}>㈜에덴은 대기 오염을 최소화하기 위한 다양한 기술과 솔루션을 제공하여<br/>깨끗한 공기를 유지하는 데 기여하고 있습니다.<br/>우리는 첨단 대기 정화 기술을 적용하여 <br/>산업 현장에서 발생하는 다양한 오염 물질을 효율적으로 제거하고 있습니다.</h2>
+      <h6 style={{color: 'white'}}>㈜에덴은 대기 오염을 최소화하기 위한 다양한 기술과 솔루션을 제공하여<br/>깨끗한 공기를 유지하는 데 기여하고 있습니다.<br/>우리는 첨단 대기 정화 기술을 적용하여 <br/>산업 현장에서 발생하는 다양한 오염 물질을 효율적으로 제거하고 있습니다.</h6>
       </section>
       <div style={{justifyContent: 'center',textAlign: 'center'}}>
         <h2>공사 실적</h2>

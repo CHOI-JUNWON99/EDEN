@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Button } from '@mui/material';
+import { Grid, Button } from '@mui/material';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import '../css/MainPage.css';
@@ -14,38 +14,30 @@ function MainPage() {
   return (
     <div className="main-page">
       <section className="hero-section" style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage2.png'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage2.webp'})`,
         width: '100%',
         height: '600px',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
       </section>
-      <Container>
-        <section className="vision-section">
-          <h2>Our Vision</h2>
-          <p>㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고</p> 
-          <p>우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.</p>
-          <div className="vision-video">
-              <ReactPlayer 
-                url={`${process.env.PUBLIC_URL}/EDEN_1080.mp4`} 
-                controls 
-                width="1100px" 
-                height="700px" 
-                playing 
-                loop 
-              />
-          </div>
-          <p>㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.</p>
-          <p>미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.</p>
-        </section>
-        <section className="services-section">
-          <h2>Our Services</h2>
-          <div>ㅤ</div>
-          <Grid container spacing={2} justifyContent="center">
-            <div>ㅤㅤㅤㅤ</div>
-            <h6>WATER</h6>
-            <div>ㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+      <div className="services-section">
+        <h2>Our Services</h2>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div className="services-grid">
+          <Grid container alignItems="center" justifyContent="center" spacing={2}>
+            <Grid item>
+              <h6>WATER</h6>
+            </Grid>
+            <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
             <Grid item>
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterDesign')}>수처리시설 설계</Button>
             </Grid>
@@ -56,10 +48,11 @@ function MainPage() {
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterManagement')}>수처리시설 관리</Button>
             </Grid>
           </Grid>
-          <Grid container spacing={2} justifyContent="center">
-            <div>ㅤㅤㅤㅤㅤ</div>
-            <h6>AIR</h6>
-            <div>ㅤㅤㅤㅤ</div>
+          <Grid container alignItems="center" justifyContent="center" spacing={2}>
+            <Grid item>
+              <h6>AIR</h6>
+            </Grid>
+            <div>ㅤㅤㅤㅤㅤㅤㅤㅤㅤ</div>
             <Grid item>
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirDesign')}>대기오염 방지시설 설계</Button>
             </Grid>
@@ -70,8 +63,10 @@ function MainPage() {
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirManagement')}>대기오염 방지시설 관리</Button>
             </Grid>
           </Grid>
-          <Grid container spacing={2} justifyContent="center">
-            <h6>CONSTRUCTION</h6>
+          <Grid container alignItems="center" justifyContent="center" spacing={2}>
+            <Grid item>
+              <h6>CONSTRUCTION</h6>
+            </Grid>
             <Grid item>
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/Construction')}>토목공사업</Button>
             </Grid>
@@ -82,7 +77,38 @@ function MainPage() {
               <Button variant="contained" className="service-button" onClick={() => handleNavigation('/MechanicalEquipment')}>기계설비공사업</Button>
             </Grid>
           </Grid>
+          <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+          <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+          <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        </div>
+      </div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <h2>Our Vision</h2>
+          <h6>㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고</h6> 
+          <h6>우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.</h6>
+        <section className="vision-section">
+          <div className="vision-video">
+          <ReactPlayer 
+            url={`${process.env.PUBLIC_URL}/EDEN_1080.mp4`} 
+            controls 
+            width="100%" 
+            height="auto" 
+            playing={true}  // 자동 재생 설정
+            loop 
+            muted={true}    // 자동 재생 시 음소거
+          />
+          </div>
+          <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+          <h6>㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.</h6>
+          <h6>미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.</h6>
         </section>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <section className="locations-section">
           <h2>Our Locations</h2>
           <Grid container spacing={2} justifyContent="center">
@@ -115,7 +141,11 @@ function MainPage() {
             </Grid>
           </Grid>
         </section>
-      </Container>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
+        <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
     </div>
   );
 }

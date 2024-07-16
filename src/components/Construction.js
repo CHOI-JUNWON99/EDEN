@@ -15,26 +15,26 @@ function Construction() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="인프라 개선" className="image"/>
           <p>인프라 개선</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="도시 개발 지원" className="image"/>
           <p>도시 개발 지원</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="최신 토목 기술 적용" className="image"/>
           <p>최신 토목 기술 적용</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="환경 친화적 시공 방법" className="image"/>
           <p>환경 친화적 시공 방법</p>
         </div>
       </section>
       <div>ㅤ</div>
       <div>ㅤ</div>
       <div className="company-message">
-      <img src={process.env.PUBLIC_URL + '/Construction.png'} alt="Company Message" className="company-message-image" />
+      <img src={process.env.PUBLIC_URL + '/Construction.webp'} alt="Company Message" className="company-message-image" />
     </div>
       <div>ㅤ</div>
       <div>ㅤ</div>

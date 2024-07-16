@@ -55,7 +55,7 @@ const PatentsCertifications = () => {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/Patents.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/Patents.webp'})`,
           width: '100%',
           height: '400px',
           backgroundSize: 'cover',

@@ -15,19 +15,19 @@ function WaterManagement() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water3-1.webp" alt="정기적인 점검 및 유지보수" className="image"/>
           <p>정기적인 점검 및 유지보수</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="신속한 문제 해결" className="image"/>
           <p>신속한 문제 해결</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="운영 효율성 극대화" className="image"/>
           <p>운영 효율성 극대화</p>
         </div>
         <div className="image-item">
-          <div className="image-placeholder">사진 준비 중..</div>
+        <img src="/MainPageOurService/water1-1.webp" alt="고객 맞춤형 관리 서비스" className="image"/>
           <p>고객 맞춤형 관리 서비스</p>
         </div>
       </section>
