@@ -23,10 +23,11 @@
     max-width: 800px;
   }
   .image {
-    width: 100%;
-    height: auto;
+    width: 100%; /* 컨테이너의 너비에 맞추기 */
+    height: 400px; /* 원하는 고정 높이 설정 */
     display: block;
     margin-bottom: 1rem;
+    object-fit: cover; /* 이미지가 컨테이너에 맞게 잘리거나 확장되도록 설정 */
   }
   
   .image-grid {

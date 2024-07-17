@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import '../css/PatentsCertifications.css';
+import { useTranslation } from 'react-i18next';
 
 const certificates = [
   { name: '사업자등록증', img: '/Certification1/1-1-1.jpg' },
@@ -9,12 +10,12 @@ const certificates = [
   { name: '중소기업 확인서', img: '/Certification1/1-1-4.png' },
   { name: '개인 하수 처리\n시설관리업', img: '/Certification1/1-2-1.jpg' },
   { name: '개인 하수 처리\n설계시공업', img: '/Certification1/1-2-2.jpg' },
-  { name: '기계설비공사업', img: '/Certification1/1-2-3.jpg' },
+  { name: '기계설비 공사업', img: '/Certification1/1-2-3.jpg' },
   { name: '대기환경전문공사업', img: '/Certification1/1-2-4.jpg' },
   { name: '상하수도 설비 공사업', img: '/Certification1/1-3-1.jpg' },
   { name: '시설물 유지관리업', img: '/Certification1/1-3-2.jpg' },
   { name: '가축분뇨 처리시설\n설계시공업', img: '/Certification1/1-3-3.jpg' },
-  { name: '토목공사업', img: '/Certification1/1-3-4.jpg' },
+  { name: '토목 공사업', img: '/Certification1/1-3-4.jpg' },
 ];
 
 const patents = [
@@ -37,6 +38,7 @@ const patents = [
 ];
 
 const PatentsCertifications = () => {
+  const { t } = useTranslation();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [currentImg, setCurrentImg] = useState('');
 
@@ -68,23 +70,28 @@ const PatentsCertifications = () => {
           position: 'relative'
         }}
       >
-        <h2 style={{ position: 'relative', top: '-20px' }}>㈜에덴은 꾸준한 개발로 더 나은 환경을 만들어나갑니다.<br/>그 동안 축적된 설계 및 시공경험과 기술력을 바탕으로 꾸준한 기술개발을 통해<br/>각종 지식재산권을 보유하고 있습니다. 또한 해외 및 미래 시장에서<br/>기술의 자립 및 선도를 목표로 지속적인 연구개발을 추진하고 있습니다.</h2>
+        <h6 style={{ position: 'relative', top: '0px', color:'white' }}>
+          {t('㈜에덴은 꾸준한 개발로 더 나은 환경을 만들어나갑니다.')}<br />
+          {t('그 동안 축적된 설계 및 시공경험과 기술력을 바탕으로 꾸준한 기술개발을 통해')}<br />
+          {t('각종 지식재산권을 보유하고 있습니다. 또한 해외 및 미래 시장에서')}<br />
+          {t('기술의 자립 및 선도를 목표로 지속적인 연구개발을 추진하고 있습니다.')}
+        </h6>
       </section>
       <header className="intellectual-property-header">
         <div className="main-content">
           <section className="intellectual-property-stats">
             <div className="stat">
-              <h2>특허 보유 수</h2>
+              <h2>{t('특허 보유 수')}</h2>
               <p>16</p>
             </div>
           </section>
-          <p>2024.01.01 기준</p>
+          <p>{t('2024.01.01 기준')}</p>
         </div>
       </header>
       <section className="certificates">
-        <h2>특허 및 인증서</h2>
+        <h2>{t('특허 및 인증서')}</h2>
         <div className="patents-buttons">
-          <button>ㅤ 사업자 등록증 및 보유면허 및 인증현황 ㅤ</button>
+          <button>{t('사업자 등록증 및 보유면허 및 인증현황')}</button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">
@@ -92,7 +99,7 @@ const PatentsCertifications = () => {
             <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
               <p>{cert.name.split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
-                  {line}
+                  {t(line)}
                   <br />
                 </React.Fragment>
               ))}</p>
@@ -114,7 +121,7 @@ const PatentsCertifications = () => {
       <section className="certificates">
         <div>ㅤ</div>
         <div className="patents-buttons">
-          <button>ㅤ    특 허    ㅤ</button>
+          <button>{t('특 허')}</button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">
@@ -122,7 +129,7 @@ const PatentsCertifications = () => {
             <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
               <p>{cert.name.split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
-                  {line}
+                  {t(line)}
                   <br />
                 </React.Fragment>
               ))}</p>

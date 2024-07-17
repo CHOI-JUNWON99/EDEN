@@ -3,10 +3,12 @@ import { Grid, Button } from '@mui/material';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import '../css/MainPage.css';
+import { useTranslation } from 'react-i18next';
 
 function MainPage() {
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
+  
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -39,13 +41,13 @@ function MainPage() {
             </Grid>
             <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterDesign')}>수처리시설 설계</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterDesign')}>{t('수처리시설 설계')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterConstruction')}>수처리시설 시공</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterConstruction')}>{t('수처리시설 시공')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterManagement')}>수처리시설 관리</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterManagement')}>{t('수처리시설 관리')}</Button>
             </Grid>
           </Grid>
           <Grid container alignItems="center" justifyContent="center" spacing={2}>
@@ -54,13 +56,13 @@ function MainPage() {
             </Grid>
             <div>ㅤㅤㅤㅤㅤㅤㅤㅤㅤ</div>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirDesign')}>대기오염 방지시설 설계</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirDesign')}>{t('대기오염 방지시설 설계')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirConstruction')}>대기오염 방지시설 시공</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirConstruction')}>{t('대기오염 방지시설 시공')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirManagement')}>대기오염 방지시설 관리</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/AirManagement')}>{t('대기오염 방지시설 관리')}</Button>
             </Grid>
           </Grid>
           <Grid container alignItems="center" justifyContent="center" spacing={2}>
@@ -68,13 +70,13 @@ function MainPage() {
               <h6>CONSTRUCTION</h6>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/Construction')}>토목공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/Construction')}>{t('토목공사업')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterSewerage')}>상하수도설비공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/WaterSewerage')}>{t('상하수도설비공사업')}</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/MechanicalEquipment')}>기계설비공사업</Button>
+              <Button variant="contained" className="service-button" onClick={() => handleNavigation('/MechanicalEquipment')}>{t('기계설비공사업')}</Button>
             </Grid>
           </Grid>
           <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
@@ -87,8 +89,8 @@ function MainPage() {
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <h2>Our Vision</h2>
-          <h6>㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고</h6> 
-          <h6>우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.</h6>
+          <h6>{t('㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고')}</h6> 
+          <h6>{t('우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.')}</h6>
         <section className="vision-section">
           <div className="vision-video">
           <ReactPlayer 
@@ -102,8 +104,8 @@ function MainPage() {
           />
           </div>
           <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
-          <h6>㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.</h6>
-          <h6>미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.</h6>
+          <h6>{t('㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.')}</h6>
+          <h6>{t('미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.')}</h6>
         </section>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
@@ -121,7 +123,7 @@ function MainPage() {
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
-              <p>서울특별시 송파구 충민로 52, 가든파이브웍스 D동 607호</p>
+              <p>{t('서울특별시 송파구 충민로 52, 가든파이브웍스 D동 607호')}</p>
               <p>T. 02-2047-0987~8</p>
               <p>F. 02-2047-0989</p>
               <p>E. edenep@naver.com</p>
@@ -136,7 +138,7 @@ function MainPage() {
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
-              <p>경기도 평택시 서탄면 마두1길 170-38, 1동</p>
+              <p>{t('경기도 평택시 서탄면 마두1길 170-38, 1동')}</p>
               <p>T. 031-667-0983</p>
             </Grid>
           </Grid>
