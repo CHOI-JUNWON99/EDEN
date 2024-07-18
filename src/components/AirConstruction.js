@@ -29,7 +29,7 @@ function AirConstruction() {
           <p>{t('환경 친화적 시공 방법')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('고객 맞춤형 시공 서비스')} className="image"/>
+          <img src="/MainPageOurService/air2-4.webp" alt={t('고객 맞춤형 시공 서비스')} className="image"/>
           <p>{t('고객 맞춤형 시공 서비스')}</p>
         </div>
       </section>

@@ -16,12 +16,15 @@ function MainPage() {
   return (
     <div className="main-page">
       <section className="hero-section" style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage2.webp'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/MainPage2.png'})`,
         width: '100%',
-        height: '600px',
+        height: '1000px',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
+        <h4 style={{ position: 'relative', top: '-77px', right: '333px', color:'white' }}>
+          {t('에덴동산과 같은 최적의 환경을 이 땅에 ㈜에덴이 만듭니다')}<br />
+        </h4>
       </section>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>

@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      "-에덴동산과 같은 최적의 환경을 이 땅에 ㈜에덴이 만듭니다-":"Creates an ideal environment on this land, just like the Garden of Eden.",
       "회사소개": "Company Introduction",
       "기술분야": "Technical Areas",
       "R&D": "R&D",
@@ -20,15 +21,15 @@ const resources = {
       "링크 컨베이어": "Link Conveyor",
       "후처리필터": "Post-Treatment Filter",
       "토목공사": "Civil Engineering",
-      "수처리시설 설계": "Water Treatment Facility Design",
-      "수처리시설 시공": "Water Treatment Facility Construction",
-      "수처리시설 관리": "Water Treatment Facility Management",
-      "대기오염 방지시설 설계": "Air Pollution Prevention Facility Design",
-      "대기오염 방지시설 시공": "Air Pollution Prevention Facility Construction",
-      "대기오염 방지시설 관리": "Air Pollution Prevention Facility Management",
+      "수처리시설 설계": "Design",
+      "수처리시설 시공": "Construction",
+      "수처리시설 관리": "Management",
+      "대기오염 방지시설 설계": "Design",
+      "대기오염 방지시설 시공": "Construction",
+      "대기오염 방지시설 관리": "Management",
       "토목공사업": "Civil Engineering",
-      "상하수도설비공사업": "Water and Sewage Facility Construction",
-      "기계설비공사업": "Mechanical Equipment Construction",
+      "상하수도설비공사업": "Water&Sewage Construction",
+      "기계설비공사업": "Machinery Construction",
       "㈜에덴은  지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고": "Eden Co. envisions a world where the environment is as beautiful and livable as Eden.",
       "우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.": "We strive to provide optimal environmental services with our given abilities and mission.",
       "㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.": "Eden Co. is recognized for its technology and expertise, based on years of experience and numerous new technology patents in the environmental field.",
@@ -438,6 +439,9 @@ const resources = {
       "고객의 생산성과 효율성을 향상시킵니다.": "to improve customer productivity and efficiency.",
       "최신 기계 설비 기술 적용": "Application of Latest Mechanical Equipment Technology",
       "안정적이고 효율적인 설비 구축": "Stable and Efficient Facility Construction",
+      "㈜에덴은 고품질의 수처리시설 시공 서비스를 제공합니다.":"Eden Co., Ltd. provides high-quality water treatment facility construction services.",
+      "우리의 전문 팀은 철저한 현장 관리와 시공 기술을 통해":"Our expert team ensures thorough site management and construction techniques",
+      "안정적이고 지속 가능한 수처리시설을 구축합니다.":"to build stable and sustainable water treatment facilities.",
     }
   },
   ko: {

@@ -121,7 +121,7 @@ const PatentsCertifications = () => {
       <section className="certificates">
         <div>ㅤ</div>
         <div className="patents-buttons">
-          <button>{t('특 허')}</button>
+          <button>{t('ㅤ특 허ㅤ')}</button>
         </div>
         <div>ㅤ</div>
         <div className="certificates-grid">

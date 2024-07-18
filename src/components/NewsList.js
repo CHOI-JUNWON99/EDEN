@@ -59,7 +59,7 @@ const NewsList = () => {
       <section
         className="hero-section"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/News6.webp'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/News.png'})`,
           width: '100%',
           height: '500px',
           backgroundSize: 'cover',

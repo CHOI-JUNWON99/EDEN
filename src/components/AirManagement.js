@@ -25,12 +25,12 @@ function AirManagement() {
           <p>{t('신속한 문제 해결')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air3-3.webp" alt={t('운영 효율성 극대화')} className="image"/>
+          <img src="/MainPageOurService/water3-3.webp" alt={t('운영 효율성 극대화')} className="image"/>
           <p>{t('운영 효율성 극대화')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('고객 맞춤형 관리 서비스')} className="image"/>
-          <p>{t('고객 맞춤형 관리 서비스')}</p>
+          <img src="/MainPageOurService/air3-4.webp" alt={t('고객 맞춤형 관리 서비스')} className="image"/>
+          <p>{t('지속적인 사후 관리 서비스')}</p>
         </div>
       </section>
     </div>

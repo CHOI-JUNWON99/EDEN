@@ -17,20 +17,20 @@ function WaterSewerage() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('깨끗한 물 공급')} className="image" />
+          <img src="/MainPageOurService/3-2-1.webp" alt={t('깨끗한 물 공급')} className="image" />
           <p>{t('깨끗한 물 공급')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('위생적인 하수 처리')} className="image" />
+          <img src="/MainPageOurService/3-2-2.webp" alt={t('위생적인 하수 처리')} className="image" />
           <p>{t('위생적인 하수 처리')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('최신 설비 기술 적용')} className="image" />
+          <img src="/MainPageOurService/3-2-3.webp" alt={t('최신 설비 기술 적용')} className="image" />
           <p>{t('최신 설비 기술 적용')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('환경 규제 준수')} className="image" />
-          <p>{t('환경 규제 준수')}</p>
+          <img src="/MainPageOurService/3-2-4.webp" alt={t('환경 규제 준수')} className="image" />
+          <p>{t('운영 효율성 극대화')}</p>
         </div>
       </section>
       <div style={{ justifyContent: 'center', textAlign: 'center' }}>
