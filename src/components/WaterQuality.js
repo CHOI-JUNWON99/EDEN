@@ -13,7 +13,7 @@ function WaterQuality() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/water.webp'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/water.png'})`,
           width: '100%',
           height: '400px',
           backgroundSize: 'cover',

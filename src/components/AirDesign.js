@@ -17,7 +17,7 @@ function AirDesign() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('맞춤형 설계 솔루션 제공')} className="image"/>
+          <img src="/MainPageOurService/air1-1.webp" alt={t('맞춤형 설계 솔루션 제공')} className="image"/>
           <p>{t('맞춤형 설계 솔루션 제공')}</p>
         </div>
         <div className="image-item">

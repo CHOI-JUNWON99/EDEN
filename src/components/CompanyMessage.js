@@ -11,7 +11,7 @@ function CompanyMessage() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/CompanyMessage0.webp'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/CompanyMessage1.png'})`,
           width: '100%',
           height: '600px',
           backgroundSize: 'cover',

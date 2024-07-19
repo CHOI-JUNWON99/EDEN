@@ -9,7 +9,7 @@ function Atmosphere() {
       <section 
         className="hero-section"
         style={{ 
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/Air.webp'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/Air.png'})`,
           width: '100%',
           height: '400px',
           backgroundSize: 'cover',
