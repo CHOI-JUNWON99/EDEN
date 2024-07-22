@@ -43,3 +43,30 @@
 .request-form button:hover {
     background-color: #333;
 }
+
+@media (max-width: 768px) {
+    .hero-section {
+      height: 300px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .service-button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    .services-grid {
+      gap: 1rem;
+    }
+  
+    .vision-video {
+      width: 100%;
+    }
+  
+    .vision-video > div {
+      padding-top: 56.25%;
+    }
+  }

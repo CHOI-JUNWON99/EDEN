@@ -1,16 +1,11 @@
 import React from 'react';
+import '../../../css/Technology.css';
 
 function EmPwt() {
     return (
-      <div>
-      <div>ㅤ</div>
-      <section style={{ 
+      <div className="container">
+      <section className="image" style={{ 
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-PWT.webp'})`,
-        width: "100%",
-        height: '1500px', // 동영상과 비슷한 높이로 설정
-        backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // 이미지 반복을 방지
       }}>
       </section>
       <div>ㅤ</div>

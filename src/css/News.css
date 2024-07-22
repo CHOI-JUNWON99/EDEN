@@ -336,3 +336,58 @@ button:hover {
   height: auto;
   object-fit: contain; /* 이미지를 원본 비율을 유지하면서 컨테이너에 맞게 조절 */
 }
+
+/* 모바일 환경 */
+@media (max-width: 768px) {
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .latest-news {
+    display: block; /* 블록 요소로 변경 */
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .latest-news-content {
+    display: block; /* 블록 요소로 변경 */
+  }
+
+  .latest-news-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .latest-news-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .latest-news-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+  }
+
+  .news-item {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}

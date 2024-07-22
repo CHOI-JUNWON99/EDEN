@@ -1,130 +1,160 @@
-/* 전체 네비게이션 바 설정 */
+/* 기본 네비게이션 바 설정 */
 .navbar {
-  width: 100vw; /* 너비를 100vw로 설정하여 화면 전체를 차지하게 함 */
-  margin: 0; /* 외부 여백을 없앰 */
-  padding: 0; /* 내부 여백을 없앰 */
-  box-sizing: border-box; /* 패딩과 테두리를 포함하여 너비와 높이 계산 */
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #ffffff;
-  color: #ffffff;
 }
 
 /* 네비게이션 바의 배경색 설정 */
 .navbar-appbar {
-  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
-  width: 100vw; /* 너비를 100vw로 설정하여 화면 전체를 차지하게 함 */
-  margin: 0; /* 외부 여백을 없앰 */
-  padding: 0; /* 내부 여백을 없앰 */
+  background-color: #ffffff;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
   color: #ffffff;
 }
 
 /* 네비게이션 바의 툴바 설정 */
 .navbar-toolbar {
-  display: flex; /* 플렉스 박스를 사용하여 수평으로 배치 */
-  justify-content: space-between; /* 요소들을 양 끝에 배치 */
-  align-items: center; /* 요소들을 세로로 가운데 정렬 */
-  width: 100%; /* 너비를 100%로 설정 */
-  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
-  padding: 0 1rem; /* 좌우에 1rem 패딩 설정 */
-  margin: 0; /* 외부 여백을 없앰 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   background-color: #ffffff;
+  padding: 0 1rem;
+  margin: 0;
 }
 
 /* 네비게이션 바의 좌측과 우측 설정 */
 .navbar-left, .navbar-right {
-  display: flex; /* 플렉스 박스를 사용하여 수평으로 배치 */
-  align-items: center; /* 요소들을 세로로 가운데 정렬 */
-  position: relative; /* 상대 위치 설정 */
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 /* 네비게이션 바의 중앙 설정 */
 .navbar-center {
-  display: flex; /* 플렉스 박스를 사용하여 수평으로 배치 */
-  justify-content: center; /* 요소들을 가운데 정렬 */
-  align-items: center; /* 요소들을 세로로 가운데 정렬 */
-  gap: 1rem; /* 요소들 사이에 1rem 간격 설정 */
-  flex-grow: 1; /* 공간을 나누어 요소들이 균등하게 배치되도록 함 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
 }
 
 /* 로고 이미지 크기 설정 */
 .navbar-logo img {
-  width: 100px; /* 로고 이미지의 너비를 100px로 설정 */
+  width: 100px;
 }
 
 /* 두 번째 로고 이미지 크기 설정 */
 .navbar-logo1 img {
-  width: 200px; /* 두 번째 로고 이미지의 너비를 200px로 설정 */
+  width: 200px;
 }
 
 /* 네비게이션 바의 버튼, 링크 스타일 설정 */
 .navbar button, .navbar a, .navbar .MuiButton-root {
-  color: #000000; /* 텍스트 색상을 검정으로 설정 */
-  margin: 0 0.5rem; /* 좌우에 0.5rem 마진 설정 */
- 
+  color: #000000;
+  margin: 0 0.5rem;
 }
 
 /* 메뉴 아이템의 루트 스타일 설정 */
 .MuiMenuItem-root {
-  color: #000000; /* 텍스트 색상을 검정으로 설정 */
+  color: #000000;
 }
 
 /* 네비게이션 아이템 설정 */
 .navbar-item {
-  position: relative; /* 상대 위치 설정 */
-  display: inline-block; /* 인라인 블록 요소로 설정 */
+  position: relative;
+  display: inline-block;
 }
 
 .navbar-button {
-  font-size: 1.2rem !important; /* 폰트 크기 설정 */
-  font-weight: bold !important; /* 폰트 두께 설정 */
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
 }
 
 /* 드롭다운 및 서브드롭다운 설정 */
 .navbar-dropdown, .navbar-subdropdown {
-  display: none; /* 기본적으로 표시하지 않음 */
-  position: absolute; /* 절대 위치 설정 */
-  background-color: #ffffff; /* 배경색을 흰색으로 설정 */
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2); /* 그림자 설정 */
-  z-index: 1; /* z-index를 1로 설정하여 다른 요소들보다 앞에 위치 */
-  width: 200px; /* 너비를 200px로 설정 */
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 200px;
 }
 
 /* 네비게이션 아이템 호버 시 드롭다운 표시 */
 .navbar-item:hover .navbar-dropdown, .navbar-subitem:hover .navbar-subdropdown {
-  display: block; /* 표시함 */
+  display: block;
 }
 
 /* 드롭다운 링크 스타일 설정 */
 .navbar-dropdown a, .navbar-subdropdown a {
-  color: black; /* 텍스트 색상을 검정으로 설정 */
-  padding: 12px 16px; /* 내부 여백 설정 */
-  text-decoration: none; /* 텍스트 장식 없앰 */
-  display: block; /* 블록 요소로 설정 */
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 /* 드롭다운 링크 호버 시 배경색 변경 */
 .navbar-dropdown a:hover, .navbar-subdropdown a:hover {
-  background-color: #f1f1f1; /* 배경색을 밝은 회색으로 설정 */
+  background-color: #f1f1f1;
 }
 
 /* 서브아이템 설정 */
 .navbar-subitem {
-  position: relative; /* 상대 위치 설정 */
+  position: relative;
 }
 
 /* 서브아이템의 링크 뒤에 화살표 추가 */
 .navbar-subitem > a::after {
-  content: '>'; /* 화살표 문자 추가 */
-  position: absolute; /* 절대 위치 설정 */
-  right: 10px; /* 우측에서 10px 떨어지게 설정 */
+  content: '>';
+  position: absolute;
+  right: 10px;
 }
 
 /* 서브드롭다운 위치 설정 */
 .navbar-subdropdown {
-  left: 100%; /* 부모 요소의 좌측에서 100% 떨어진 위치에 배치 */
-  top: 0; /* 상단에서 0 위치에 배치 */
+  left: 100%;
+  top: 0;
 }
 
 /* 네비게이션 바의 우측 설정 */
 .navbar-right {
-  flex-shrink: 0; /* 요소가 줄어들지 않도록 설정 */
+  flex-shrink: 0;
+}
+
+/* 모바일 환경을 위한 반응형 디자인 */
+@media (max-width: 768px) {
+  .navbar-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .navbar-left, .navbar-right {
+    width: auto;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .navbar-center {
+    display: none; /* 모바일 환경에서 네비게이션 바의 중앙 항목 숨기기 */
+  }
+  .navbar-item {
+    width: 100%;
+  }
+  .navbar-dropdown {
+    width: 100%;
+  }
+  .navbar-subdropdown {
+    width: 100%;
+    position: relative;
+  }
+  .navbar-subitem > a::after {
+    content: '';
+  }
+  .navbar-logo img, .navbar-logo1 img {
+    width: 77px !important; /* 모바일 환경에서 로고 크기 조정 */
+  }
 }

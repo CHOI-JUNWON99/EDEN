@@ -8,8 +8,8 @@ const NewsList = () => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [newsPerPage] = useState(6); // 아래에 표시될 뉴스의 수
-  const [latestPreviewLength] = useState(515); // latest preview 길이 조절
+  const [newsPerPage] = useState(6);
+  const [latestPreviewLength] = useState(515);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const NewsList = () => {
 
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
-  const currentNews = filteredNews.slice(indexOfFirstNews + 1, indexOfLastNews + 1); // +1 to skip the latest news
+  const currentNews = filteredNews.slice(indexOfFirstNews + 1, indexOfLastNews + 1);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

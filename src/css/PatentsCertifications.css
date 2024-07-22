@@ -164,3 +164,48 @@
     cursor: pointer;
     border-radius: 10px; /* 둥근 버튼으로 변경 */
   }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 300px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .service-button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    .services-grid {
+      gap: 1rem;
+    }
+  
+    .vision-video {
+      width: 100%;
+    }
+  
+    .vision-video > div {
+      padding-top: 56.25%;
+    }
+  
+    .certificates-grid {
+      grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개의 칸 배치 */
+    }
+  
+    .certificate {
+      height: auto; /* 높이를 자동으로 설정 */
+      padding: 1rem; /* 내부 여백 설정 */
+    }
+  
+    .certificate p {
+      font-size: 1rem; /* 폰트 크기 줄이기 */
+    }
+  
+    .modal {
+      width: 90%; /* 너비 설정 */
+      padding: 1rem; /* 내부 여백 설정 */
+    }
+  }

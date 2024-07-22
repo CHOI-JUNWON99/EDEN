@@ -4,7 +4,8 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      "-에덴동산과 같은 최적의 환경을 이 땅에 ㈜에덴이 만듭니다-":"Creates an ideal environment on this land, just like the Garden of Eden.",
+      "새로 수정한 문구" : "새로 수정한 문구의 영어 번역", 
+      "에덴동산과 같은 최적의 환경을 이 땅에 ㈜에덴이 만듭니다":"Creates an ideal environment on this land, just like the Garden of Eden.",
       "회사소개": "Company Introduction",
       "기술분야": "Technical Areas",
       "R&D": "R&D",

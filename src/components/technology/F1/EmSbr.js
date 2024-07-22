@@ -1,37 +1,21 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import ReactPlayer from 'react-player';
-
+import '../../../css/Technology.css';
 
 function EmSbr() {
   return (
-    <div>
-      <div>ㅤ</div>
-      <section style={{ 
+    <div className="container">
+      <section className="image" style={{ 
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-SBR5.webp'})`,
-        width: "100%",
-        height: '1000px', // 동영상과 비슷한 높이로 설정
-        backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // 이미지 반복을 방지
       }}>
       </section>
-      <section style={{ 
+      <section className="image" style={{ 
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-SBR2.webp'})`,
-        width: "100%",
-        height: '800px', // 동영상과 비슷한 높이로 설정
-        backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // 이미지 반복을 방지
       }}>
       </section>
-      <section style={{ 
+      <section className="image" style={{  
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-SBR3.webp'})`,
-        width: "100%",
-        height: '800px', // 동영상과 비슷한 높이로 설정
-        backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // 이미지 반복을 방지
       }}>
       </section>
       <Container>
@@ -48,7 +32,6 @@ function EmSbr() {
           </div>
         </section>
       </Container>
-
       <section className="research-table">
         <table>
           <thead>

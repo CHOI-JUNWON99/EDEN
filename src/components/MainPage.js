@@ -22,7 +22,7 @@ function MainPage() {
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
-        <h4 style={{ position: 'relative', top: '-77px', right: '333px', color:'white' }}>
+        <h4 className="hero-text">
           {t('에덴동산과 같은 최적의 환경을 이 땅에 ㈜에덴이 만듭니다')}<br />
         </h4>
       </section>
@@ -101,15 +101,16 @@ function MainPage() {
             controls 
             width="100%" 
             height="auto" 
+            backgroundSize= "cover"
+            backgroundPosition= "center"
             playing={true}  // 자동 재생 설정
             loop 
             muted={true}    // 자동 재생 시 음소거
           />
           </div>
-          <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
-          <h6>{t('㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.')}</h6>
-          <h6>{t('미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.')}</h6>
         </section>
+        <h6>{t('㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.')}</h6>
+        <h6>{t('미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.')}</h6>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
         <div>ㅤㅤㅤㅤㅤㅤㅤ</div>
@@ -120,11 +121,12 @@ function MainPage() {
             <Grid item>
             <div className="h8">Seoul Office</div>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.749786719616!2d127.12020731530824!3d37.47963457981461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca58fb21526df%3A0x5d9d39e7d93f6049!2z7ISc7Jq47Yq567OE7Iuc6rOg64yA6rK96ri4IOqwnOumrOygleu5hOq4sA!5e0!3m2!1sko!2skr!4v1690275741836!5m2!1sko!2skr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.280613254087!2d127.11961092719552!3d37.47770392921481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5320ee8eca3%3A0xba804017bfd61afb!2zKOyjvCnsl5DrjbQ!5e0!3m2!1sko!2skr!4v1721479790107!5m2!1sko!2skr"
                 width="450"
                 height="300"
                 allowFullScreen=""
                 loading="lazy"
+                title="Seoul Office Location Map"
               ></iframe>
               <p>{t('서울특별시 송파구 충민로 52, 가든파이브웍스 D동 607호')}</p>
               <p>T. 02-2047-0987~8</p>
@@ -135,11 +137,12 @@ function MainPage() {
             <Grid item>
             <div className="h8">Pyeongtaek Factory</div>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.216681857155!2d127.010961415309!3d37.45051597981853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca46f6b7d3c67%3A0xa99da56ef5b8e93!2z7ISc7Jq47Yq567OE7Iuc6rOg64yA64yA7J6lIOq0gOyGjCDrtoDrtoDsnbQg6rCA7YOd7J2Y!5e0!3m2!1sko!2skr!4v1690275781305!5m2!1sko!2skr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3181.714881072921!2d127.01867707718695!3d37.11190395006489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b3f3e62240b01%3A0x1b49202d3c918d76!2z6rK96riw64-EIO2Pie2DneyLnCDshJztg4TrqbQg66eI65GQMeq4uCAxNzAtMzg!5e0!3m2!1sko!2skr!4v1721479920123!5m2!1sko!2skr"
                 width="450"
                 height="300"
                 allowFullScreen=""
                 loading="lazy"
+                title="Pyeongtaek Factory Location Map"
               ></iframe>
               <p>{t('경기도 평택시 서탄면 마두1길 170-38, 1동')}</p>
               <p>T. 031-667-0983</p>

@@ -1,18 +1,13 @@
 import React from 'react';
+import '../../../css/Technology.css';
 
 function EmMbr() {
   return (
-    <div>
-      <div>ㅤ</div>
-      <section style={{ 
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-MBR.webp'})`,
-        width: "100%",
-        height: '1500px', // 동영상과 비슷한 높이로 설정
-        backgroundSize: 'contain', // 원본 비율을 유지하며 컨테이너에 맞추기
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat' // 이미지 반복을 방지
-      }}>
-      </section>
+    <div className="container">
+      <section className="image" style={{ 
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-MBR.webp'})`
+        }}
+      ></section>
       <section className="research-table">
         <table>
           <thead>
@@ -25,7 +20,7 @@ function EmMbr() {
             </tr>
           </thead>
           <tbody>
-          <tr>
+            <tr>
               <td>2018.05.09</td>
               <td>참아람 김포공장 오수처리시설 기계공사 및 배관공사</td>
               <td>주식회사 참아람</td>
@@ -73,8 +68,6 @@ function EmMbr() {
           </tbody>
         </table>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
     </div>
   );
 }
