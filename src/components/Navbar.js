@@ -123,7 +123,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <AppBar position="static" className="navbar-appbar">
+      <AppBar position="static" className="navbar-appbar" elevation={0}>
         <Toolbar className="navbar-toolbar">
           <div className="navbar-left">
             <Link to="/" className="navbar-logo">
@@ -133,10 +133,10 @@ function Navbar() {
               <img src="/EDEN.logo.png" alt="Company Logo" />
             </Link>
           </div>
-          <Hidden smDown>
+          <Hidden lgDown>
             <div className="navbar-center">
               <div className="navbar-item">
-                <Button color="inherit" className="navbar-button">{t('회사소개')}</Button>
+                <Button color="inherit" className="navbar-button" component={Link} to="/CompanyMessage">{t('회사소개')}</Button>
                 <div className="navbar-dropdown">
                   <Link to="/CompanyMessage">{t('인사말')}</Link>
                   <Link to="/CompanyHistory">{t('회사연혁')}</Link>
@@ -144,7 +144,7 @@ function Navbar() {
                 </div>
               </div>
               <div className="navbar-item">
-                <Button color="inherit" className="navbar-button">{t('기술분야')}</Button>
+                <Button color="inherit" className="navbar-button" component={Link} to="/WaterQuality">{t('기술분야')}</Button>
                 <div className="navbar-dropdown">
                   <div className="navbar-subitem">
                     <Link to="/WaterQuality">{t('수질')}</Link>
@@ -191,11 +191,11 @@ function Navbar() {
             </div>
           </Hidden>
           <div className="navbar-right">
-            <Hidden smDown>
+            <Hidden lgDown>
               <Button color="inherit" onClick={() => changeLanguage('en')}>ENG</Button>
               <Button color="inherit" onClick={() => changeLanguage('ko')}>한국어</Button>
             </Hidden>
-            <Hidden smUp>
+            <Hidden lgUp>
               <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle}>
                 <MenuIcon />
               </IconButton>
@@ -203,7 +203,7 @@ function Navbar() {
           </div>
         </Toolbar>
       </AppBar>
-      <Hidden smUp>
+      <Hidden lgUp>
         <Drawer
           variant="temporary"
           anchor="right"

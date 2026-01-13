@@ -46,6 +46,7 @@ function App() {
     <Router>
       <div className="app-container">
         <Navbar />
+        <main>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/CompanyMessage" element={<CompanyMessage />} />
@@ -85,6 +86,7 @@ function App() {
           <Route path="/NavConstruction" element={<NavConstruction />} />
           {/* 다른 페이지 라우트를 여기에 추가 */}
         </Routes>
+        </main>
         <Footer />
       </div>
     </Router>

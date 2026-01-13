@@ -121,43 +121,68 @@
   left: -65px; /* 선이 중앙 줄기와 이어지도록 위치 수정 */
 }
 
-/* Media query for smaller screens */
+/* 모바일 반응형 디자인 */
 @media screen and (max-width: 768px) {
-  .timeline-event {
-    width: 80%;
-    left: 10% !important;
-    text-align: center;
+  .company-history {
+    padding: 1rem;
   }
 
-  .timeline:before {
-    left: 10%;
-  }
-
-  .timeline-event.left:before,
-  .timeline-event.right:before {
-    width: 10%;
-    left: -10%;
-  }
-}
-
-/* 반응형 디자인 */
-@media screen and (max-width: 768px) {
-  .timeline-event {
-    width: 80%;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    text-align: center;
+  .history-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
     margin-bottom: 1rem;
   }
 
-  .timeline:before {
-    left: 50%;
-    width: 2px;
+  .history-buttons button {
+    margin: 0;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
   }
 
+  /* 타임라인 중앙선 숨기기 */
+  .timeline:before {
+    display: none;
+  }
+
+  /* 타임라인 이벤트 - 전체 너비로 변경 */
+  .timeline-event {
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-event.left,
+  .timeline-event.right {
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  /* 연결선 숨기기 */
   .timeline-event.left:before,
   .timeline-event.right:before {
-    width: 0;
-    background: none;
+    display: none;
+  }
+
+  /* 카드 스타일 */
+  .timeline-event .timeline-content {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .timeline-event h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .timeline-event ul li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    word-break: keep-all;
   }
 }

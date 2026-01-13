@@ -1,6 +1,6 @@
 /* 기본 네비게이션 바 설정 */
 .navbar {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
 /* 네비게이션 바의 배경색 설정 */
 .navbar-appbar {
   background-color: #ffffff;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
   color: #ffffff;
@@ -126,8 +126,8 @@
   flex-shrink: 0;
 }
 
-/* 모바일 환경을 위한 반응형 디자인 */
-@media (max-width: 768px) {
+/* 모바일/태블릿 환경을 위한 반응형 디자인 */
+@media (max-width: 1199px) {
   .navbar-toolbar {
     flex-direction: row;
     justify-content: space-between;

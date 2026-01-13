@@ -10,16 +10,63 @@
 }
 
 .locations-section {
-  padding: 0rem;
+  padding: 4rem 1rem;
   background-size: cover;
   background-position: center;
+  text-align: center;
+}
+
+.locations-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.location-card {
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.67%; /* 3:2 비율 */
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .vision-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding: 0; /* 여백 제거 */
+  padding: 4rem 1rem;
   background-size: cover;
   background-position: center;
+  text-align: center;
+}
+
+.vision-text {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 0;
+  word-break: keep-all;
+}
+
+.vision-text h6 {
+  margin: 0.3rem 0;
 }
 
 .services-section {
@@ -32,6 +79,34 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  padding: 3rem 0;
+}
+
+/* 서비스 행 스타일 */
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* 서비스 제목 스타일 (WATER, AIR, CONSTRUCTION) */
+.service-title {
+  width: 200px;
+  flex-shrink: 0;
+  text-align: right;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 서비스 버튼 컨테이너 */
+.service-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .service-category {
@@ -83,24 +158,25 @@ h4 {
 }
 
 .vision-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* 부모 요소의 너비를 100%로 설정 */
-  height: auto;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden; /* 자식 요소가 부모 요소의 경계를 벗어날 경우 잘리도록 설정 */
+  width: 100%;
+  margin: 0;
+}
+
+/* ReactPlayer 내부 div */
+.vision-video > div {
+  width: 100% !important;
 }
 
 .service-button {
-  width: 400px;  /* 버튼 너비 설정 */
-  height: 100px;  /* 버튼 높이 설정 */
-  font-size: 2rem !important;  /* 버튼 텍스트 크기 설정 */
-  color: #ffffff;  /* 텍스트 색상 설정 */
-  background-color: #ffffff;  /* 배경색 설정 */
-  text-align: center;  /* 텍스트 가운데 정렬 */
-  margin: 1rem !important;  /* 버튼 간격 설정 */
+  width: 400px !important;
+  min-width: 400px !important;
+  max-width: 400px !important;
+  height: 100px;
+  font-size: 2rem !important;
+  color: #ffffff;
+  background-color: #ffffff;
+  text-align: center;
+  margin: 1rem !important;
 }
 
 .company-message {
@@ -241,7 +317,7 @@ h4 {
 }
 
 /* 반응형 디자인 추가 */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-section {
     height: 300px;
     background-size: contain; /* 배경 이미지의 크기를 화면에 맞춤 */
@@ -261,15 +337,156 @@ h4 {
     font-size: 1rem;
   }
 
+  .services-section {
+    padding: 2rem 1rem;
+  }
+
   .services-grid {
     gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* 모바일에서 서비스 행 세로 정렬 */
+  .service-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-title {
+    width: auto;
+    text-align: center;
+  }
+
+  .service-buttons {
+    justify-content: center;
+  }
+
+  /* Vision 섹션 모바일/태블릿 */
+  .vision-section {
+    padding: 1rem;
+  }
+
+  .vision-section h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .vision-text {
+    margin: 0;
+  }
+
+  .vision-text h6 {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
   }
 
   .vision-video {
     width: 100%;
+    margin: 0;
   }
 
-  .vision-video > div {
-    padding-top: 100%; /* 16:9 Aspect Ratio */
+  /* Locations 섹션 모바일 */
+  .locations-section {
+    padding: 2rem 1rem;
+  }
+
+  .locations-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .location-card {
+    max-width: 320px;
+  }
+
+  .map-container {
+    padding-bottom: 75%; /* 모바일에서 4:3 비율 */
+  }
+}
+
+/* 데스크탑 (1024px 초과) */
+@media (min-width: 1025px) {
+  .vision-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .vision-text h6 {
+    margin: 0.5rem 0;
+  }
+
+  .vision-video {
+    margin: 1rem 0;
+  }
+}
+
+/* 소형 모바일 (425px 이하) */
+@media (max-width: 425px) {
+  .service-button {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    height: 50px;
+    font-size: 0.85rem !important;
+    margin: 0.4rem !important;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* 태블릿/소형 노트북 (912px ~ 1023px) - 버튼 3개 한 줄 표시 */
+@media (min-width: 912px) and (max-width: 1023px) {
+  .service-row {
+    flex-direction: row !important;
+  }
+
+  .service-title {
+    width: 150px !important;
+    text-align: right !important;
+  }
+
+  .service-button {
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+    height: 60px;
+    font-size: 1rem !important;
+    margin: 0.5rem !important;
+  }
+}
+
+/* 소형 데스크탑 (1024px ~ 1223px) - 버튼 3개 한 줄 표시 */
+@media (min-width: 1024px) and (max-width: 1223px) {
+  .service-button {
+    width: 230px !important;
+    min-width: 230px !important;
+    max-width: 230px !important;
+    height: 70px;
+    font-size: 1.1rem !important;
+    margin: 0.5rem !important;
+  }
+}
+
+/* 중간 크기 데스크탑 (1224px ~ 1600px) - 서비스 버튼 반응형 */
+@media (min-width: 1224px) and (max-width: 1600px) {
+  .service-button {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    height: 80px;
+    font-size: 1.3rem !important;
+  }
+}
+
+/* 대형 데스크탑 (1601px 이상) */
+@media (min-width: 1601px) {
+  .service-button {
+    width: 400px !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+    height: 100px;
+    font-size: 2rem !important;
   }
 }
