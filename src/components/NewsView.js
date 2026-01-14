@@ -146,7 +146,7 @@ const NewsView = () => {
         components={{
           img: ({ node, ...props }) => (
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <img {...props} alt="markdown image" style={{ maxWidth: '100%' }} />
+              <img {...props} alt="content" style={{ maxWidth: '100%' }} />
             </div>
           ),
         }}
@@ -196,7 +196,7 @@ const NewsView = () => {
                   components={{
                     img: ({ node, ...props }) => (
                       <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <img {...props} alt="markdown image" style={{ maxWidth: '100%' }} />
+                        <img {...props} alt="content" style={{ maxWidth: '100%' }} />
                       </div>
                     )
                   }}>

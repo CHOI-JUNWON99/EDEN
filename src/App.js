@@ -12,7 +12,6 @@ import RequestForm from './components/RequestForm';
 import RaD from './components/RaD';
 import NewsList from './components/NewsList';
 import AddNews from './components/AddNews';
-import uploadImage from './components/uploadImage';
 import NewsView from './components/NewsView';
 import EmSbr from './components/technology/F1/EmSbr';
 import EmMbr from './components/technology/F1/EmMbr';

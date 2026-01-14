@@ -103,7 +103,7 @@ const AddNews = () => {
           components={{
             img: ({ node, ...props }) => (
               <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <img {...props} alt="markdown image" className="content-img" />
+                <img {...props} alt="content" className="content-img" />
               </div>
             ),
           }}
