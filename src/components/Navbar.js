@@ -18,23 +18,26 @@ function Navbar() {
     setOpenTech(!openTech);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'ko' ? 'en' : 'ko';
+    i18n.changeLanguage(newLang);
   };
+
+  const currentLang = i18n.language === 'ko' ? 'KOR' : 'ENG';
 
   const drawer = (
     <div>
       <List>
-        <ListItem button component={Link} to="/">
-          <ListItemText primary={t('회사소개')} />
+        <ListItem button component={Link} to="/" onClick={handleDrawerToggle}>
+          <ListItemText primary={t('홈')} />
         </ListItem>
-        <ListItem button component={Link} to="/CompanyMessage">
+        <ListItem button component={Link} to="/CompanyMessage" onClick={handleDrawerToggle}>
           <ListItemText primary={t('인사말')} />
         </ListItem>
-        <ListItem button component={Link} to="/CompanyHistory">
+        <ListItem button component={Link} to="/CompanyHistory" onClick={handleDrawerToggle}>
           <ListItemText primary={t('회사연혁')} />
         </ListItem>
-        <ListItem button component={Link} to="/PatentsCertifications">
+        <ListItem button component={Link} to="/PatentsCertifications" onClick={handleDrawerToggle}>
           <ListItemText primary={t('특허 및 인증서')} />
         </ListItem>
         <ListItem button onClick={handleTechClick}>
@@ -43,79 +46,31 @@ function Navbar() {
         </ListItem>
         <Collapse in={openTech} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            <ListItem button component={Link} to="/WaterQuality" sx={{ pl: 4 }}>
+            <ListItem button component={Link} to="/WaterQuality" sx={{ pl: 4 }} onClick={handleDrawerToggle}>
               <ListItemText primary={t('수질')} />
             </ListItem>
-            <List component="div" disablePadding>
-              <ListItem button component={Link} to="/technology/F1/EmSbr" sx={{ pl: 8 }}>
-                <ListItemText primary="EM-SBR" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F1/EmMbr" sx={{ pl: 8 }}>
-                <ListItemText primary="EM-MBR" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F1/EmNprs" sx={{ pl: 8 }}>
-                <ListItemText primary="EM-NPRS" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F1/EmPwt" sx={{ pl: 8 }}>
-                <ListItemText primary="EM-PWT" />
-              </ListItem>
-            </List>
-            <ListItem button component={Link} to="/Atmosphere" sx={{ pl: 4 }}>
+            <ListItem button component={Link} to="/Atmosphere" sx={{ pl: 4 }} onClick={handleDrawerToggle}>
               <ListItemText primary={t('대기')} />
             </ListItem>
-            <List component="div" disablePadding>
-              <ListItem button component={Link} to="/technology/F2/BioFilter" sx={{ pl: 8 }}>
-                <ListItemText primary="BIOFILTER" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F2/MultyScrubber" sx={{ pl: 8 }}>
-                <ListItemText primary="MULTY SCRUBBER" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F2/Srs" sx={{ pl: 8 }}>
-                <ListItemText primary="SRS" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F2/Tos" sx={{ pl: 8 }}>
-                <ListItemText primary="TOS" />
-              </ListItem>
-            </List>
-            <ListItem button component={Link} to="/technology/F3/DrumScreen" sx={{ pl: 4 }}>
+            <ListItem button component={Link} to="/technology/F3/DrumScreen" sx={{ pl: 4 }} onClick={handleDrawerToggle}>
               <ListItemText primary={t('제품소개')} />
             </ListItem>
-            <List component="div" disablePadding>
-              <ListItem button component={Link} to="/technology/F3/DrumScreen" sx={{ pl: 8 }}>
-                <ListItemText primary="DRUM SCREEN" />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F3/UvSystem" sx={{ pl: 8 }}>
-                <ListItemText primary={t('UV소독기')} />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F3/Electric" sx={{ pl: 8 }}>
-                <ListItemText primary={t('전기집진기')} />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F3/Link" sx={{ pl: 8 }}>
-                <ListItemText primary={t('링크 컨베이어')} />
-              </ListItem>
-              <ListItem button component={Link} to="/technology/F3/PostTreat" sx={{ pl: 8 }}>
-                <ListItemText primary={t('후처리필터')} />
-              </ListItem>
-            </List>
-            <ListItem button component={Link} to="/NavConstruction" sx={{ pl: 4 }}>
+            <ListItem button component={Link} to="/NavConstruction" sx={{ pl: 4 }} onClick={handleDrawerToggle}>
               <ListItemText primary={t('토목공사')} />
             </ListItem>
           </List>
         </Collapse>
-        <ListItem button component={Link} to="/RaD">
+        <ListItem button component={Link} to="/RaD" onClick={handleDrawerToggle}>
           <ListItemText primary={t('R&D')} />
         </ListItem>
-        <ListItem button component={Link} to="/NewsList">
+        <ListItem button component={Link} to="/NewsList" onClick={handleDrawerToggle}>
           <ListItemText primary={t('환경뉴스')} />
         </ListItem>
-        <ListItem button component={Link} to="/RequestForm">
+        <ListItem button component={Link} to="/RequestForm" onClick={handleDrawerToggle}>
           <ListItemText primary={t('견적의뢰')} />
         </ListItem>
-        <ListItem button onClick={() => changeLanguage('en')}>
-          <ListItemText primary="ENG" />
-        </ListItem>
-        <ListItem button onClick={() => changeLanguage('ko')}>
-          <ListItemText primary="한국어" />
+        <ListItem button onClick={toggleLanguage}>
+          <ListItemText primary={currentLang === 'KOR' ? 'ENG로 변경' : 'KOR로 변경'} />
         </ListItem>
       </List>
     </div>
@@ -128,9 +83,7 @@ function Navbar() {
           <div className="navbar-left">
             <Link to="/" className="navbar-logo">
               <img src="/eden_front.png" alt="Company Logo" />
-            </Link>
-            <Link to="/" className="navbar-logo1">
-              <img src="/EDEN.logo.png" alt="Company Logo" />
+              <img src="/EDEN.logo.png" alt="EDEN" className="navbar-logo-text" />
             </Link>
           </div>
           <Hidden lgDown>
@@ -192,8 +145,9 @@ function Navbar() {
           </Hidden>
           <div className="navbar-right">
             <Hidden lgDown>
-              <Button color="inherit" onClick={() => changeLanguage('en')}>ENG</Button>
-              <Button color="inherit" onClick={() => changeLanguage('ko')}>한국어</Button>
+              <button className="lang-toggle" onClick={toggleLanguage}>
+                {currentLang}
+              </button>
             </Hidden>
             <Hidden lgUp>
               <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle}>

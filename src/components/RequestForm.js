@@ -1,92 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/RequestForm.css';
 import { useTranslation } from 'react-i18next';
 
 function RequestForm() {
     const { t } = useTranslation();
-    const [formData, setFormData] = useState({
-        subject: '',
-        name: '',
-        phone: '',
-        email: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('https://us-central1-eandtech-f8efe.cloudfunctions.net/sendEmail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-            if (response.ok) {
-                alert(t('견적 요청이 성공적으로 제출되었습니다!'));
-                setFormData({ subject: '', name: '', phone: '', email: '', message: '' });
-            } else {
-                alert(t('견적 요청 제출에 실패했습니다.'));
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert(t('견적 요청 제출에 실패했습니다.'));
-        }
-    };
 
     return (
-        <div>
-            <div>ㅤ</div>
-            <form className="request-form" onSubmit={handleSubmit}>
-                <h2>{t('견적 의뢰')}</h2>
-                <div>ㅤ</div>
-                <input
-                    type="text"
-                    name="subject"
-                    placeholder={t('제목을 입력해주세요.')}
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="name"
-                    placeholder={t('이름을 입력해주세요.')}
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder={t('휴대폰 번호를 입력해주세요.')}
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder={t('연락 받으실 이메일 주소를 입력해주세요.')}
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <textarea
-                    name="message"
-                    placeholder={t('내용을 입력해주세요.')}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">{t('제출')}</button>
-            </form>
-            <div>ㅤ</div>
+        <div className="request-page">
+            <div className="request-content">
+                <div className="request-card">
+                    <div className="request-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#009688" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+
+                    <h2>{t('이메일로 문의해주세요')}</h2>
+
+                    <p className="request-description">
+                        {t('견적 문의, 기술 상담, 협력 제안 등 어떤 문의든 환영합니다.')}
+                        <br />
+                        {t('이메일을 보내주시면 빠르게 응대해드리겠습니다.')}
+                    </p>
+
+                    <a href="mailto:edenep@naver.com" className="email-link">
+                        edenep@naver.com
+                    </a>
+
+                    <div className="contact-info">
+                        <div className="contact-item">
+                            <strong>{t('전화')}</strong>
+                            <span>02-2047-0987~8</span>
+                        </div>
+                        <div className="contact-item">
+                            <strong>{t('팩스')}</strong>
+                            <span>02-2047-0989</span>
+                        </div>
+                    </div>
+
+                    <p className="request-note">
+                        {t('영업일 기준 24시간 이내 답변드립니다.')}
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }
