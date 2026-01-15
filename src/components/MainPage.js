@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@mui/material';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import '../css/MainPage.css';
 import { useTranslation } from 'react-i18next';
+
+// 카운터 애니메이션 컴포넌트
+function Counter({ end, duration = 2000, suffix = '' }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime;
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setCount(Math.floor(progress * end));
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    requestAnimationFrame(animate);
+  }, [isVisible, end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 function MainPage() {
   const navigate = useNavigate();
@@ -62,6 +103,26 @@ function MainPage() {
           <p>{t('㈜에덴은 지구환경이 에덴동산과 같이 아름답고 살기에 좋은 환경이 되는 비전을 가지고')}</p>
           <p>{t('우리에게 주어진 능력과 사명으로 최적의 환경서비스를 제공하도록 노력하겠습니다.')}</p>
         </div>
+
+        <div className="stats-container">
+          <div className="stat-card">
+            <div className="stat-number"><Counter end={new Date().getFullYear() - 2002} suffix={t('년')} /></div>
+            <div className="stat-label">{t('업력')}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-number"><Counter end={28} suffix={t('개')} /></div>
+            <div className="stat-label">{t('특허 및 인증')}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-number"><Counter end={100} suffix="+" /></div>
+            <div className="stat-label">{t('완료 프로젝트')}</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-number"><Counter end={10} suffix="+" /></div>
+            <div className="stat-label">{t('기술협약')}</div>
+          </div>
+        </div>
+
         <div className="vision-text">
           <p>{t('㈜에덴은 환경분야에서 오랜 업력을 바탕으로 많은 경험과 신기술 특허를 보유하여 기술성과 전문성을 인정받은 회사입니다.')}</p>
           <p>{t('미래 세대가 안전하고 깨끗한 환경에서 생활하도록 기여하는 회사로 발전할 것입니다.')}</p>

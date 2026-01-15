@@ -46,18 +46,19 @@
     display: inline-block;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #009688;
+    color: #5b6b7d;
     text-decoration: none;
     padding: 1rem 2rem;
-    border: 2px solid #009688;
+    border: 2px solid #5b6b7d;
     border-radius: 50px;
     transition: all 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .email-link:hover {
-    background-color: #009688;
+    background-color: #3d4a5c;
     color: #ffffff;
+    border-color: #3d4a5c;
 }
 
 .contact-info {

@@ -11,11 +11,16 @@
 .history-buttons button {
   margin:  0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #009688;
+  background-color: #64748b;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.history-buttons button:hover {
+  background-color: #475569;
 }
 
 .timeline {
@@ -25,39 +30,39 @@
 
 .timeline-event {
   position: relative;
-  width: 35%;
-  padding: 2rem;
+  width: auto;
+  padding: 1rem 0;
   box-sizing: border-box;
   text-align: left;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .timeline-event.left {
-  left: 50%;
-  transform: translateX(-110%); /* 중앙 선에서 10px 떨어지게 조정 */
+  margin-left: 5%;
+  margin-right: calc(50% + 40px);
   text-align: left;
 }
 
 .timeline-event.right {
-  left: 50%;
-  transform: translateX(10%); /* 중앙 선에서 10px 떨어지게 조정 */
+  margin-left: calc(50% + 40px);
+  margin-right: 5%;
   text-align: left;
 }
 
 .timeline-event .timeline-content {
-  background: #e0f7fa;
+  background: #f1f5f9;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   position: relative;
   text-align: left;
-  width: calc(100% - 30px);
-  border: 2px solid #009688;
+  width: 100%;
+  border: 2px solid #64748b;
 }
 
 .timeline-event h3 {
   margin: 0 0 1rem 0;
-  color: #00796b;
+  color: #334155;
 }
 
 .timeline-event ul {
@@ -70,14 +75,14 @@
   margin-bottom: 0.75rem;
   position: relative;
   padding-left: 25px;
-  color: #004d40;
+  color: #475569;
 }
 
 .timeline-event ul li:before {
   content: '•';
   position: absolute;
   left: 0;
-  color: #009688;
+  color: #5b6b7d;
 }
 
 /* Central stem line */
@@ -89,36 +94,30 @@
   transform: translateX(-50%);
   width: 40px;
   height: 100%;
-  background: #009688;
+  background: #64748b;
 }
 
 /* Branch lines */
-.timeline-event.left:before{
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100px; /* 중앙 선에서 박스까지의 거리 조정 */
-  height: 4px;
-  background: #009688;
-}
-
-.timeline-event.right:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100px; /* 중앙 선에서 박스까지의 거리 조정 */
-  height: 4px;
-  background: #009688;
-}
-
 .timeline-event.left:before {
-  right: -65px; /* 선이 중앙 줄기와 이어지도록 위치 수정 */
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: #64748b;
+  left: 100%;
+  width: 40px;
 }
 
 .timeline-event.right:before {
-  left: -65px; /* 선이 중앙 줄기와 이어지도록 위치 수정 */
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background: #64748b;
+  right: 100%;
+  width: 40px;
 }
 
 /* 모바일 반응형 디자인 */
@@ -159,6 +158,8 @@
   .timeline-event.right {
     left: 0 !important;
     transform: none !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
   }
 
   /* 연결선 숨기기 */

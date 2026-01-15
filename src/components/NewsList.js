@@ -128,7 +128,11 @@ const NewsList = () => {
       </div>
       <div className="pagination">
         {[...Array(Math.ceil((filteredNews.length - 1) / newsPerPage)).keys()].map(number => (
-          <button key={number + 1} onClick={() => paginate(number + 1)}>
+          <button
+            key={number + 1}
+            onClick={() => paginate(number + 1)}
+            className={currentPage === number + 1 ? 'active' : ''}
+          >
             {number + 1}
           </button>
         ))}
