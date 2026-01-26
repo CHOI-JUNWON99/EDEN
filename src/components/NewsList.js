@@ -1,27 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { useQuery } from '@tanstack/react-query';
 import { db } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import '../css/News.css';
 
+// 뉴스 목록 fetch 함수
+const fetchNewsList = async () => {
+  const q = query(collection(db, 'news'), orderBy('created_at', 'desc'));
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+};
+
 const NewsList = () => {
-  const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [newsPerPage] = useState(6);
   const [latestPreviewLength] = useState(515);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetchNews = async () => {
-      const q = query(collection(db, 'news'), orderBy('created_at', 'desc'));
-      const querySnapshot = await getDocs(q);
-      const newsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setNews(newsList);
-    };
-
-    fetchNews();
-  }, []);
+  // React Query로 뉴스 목록 조회
+  const { data: news = [], isLoading, error } = useQuery({
+    queryKey: ['news'],
+    queryFn: fetchNewsList,
+  });
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
@@ -54,12 +56,15 @@ const NewsList = () => {
     return preview;
   };
 
+  if (isLoading) return <div className="news-container"><p>로딩 중...</p></div>;
+  if (error) return <div className="news-container"><p>에러가 발생했습니다.</p></div>;
+
   return (
     <div className="news-container">
       <section
         className="hero-section"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/News.png'})`,
+          backgroundImage: `url(${process.env.PUBLIC_URL + '/News.webp'})`,
           width: '100%',
           height: '500px',
           backgroundSize: 'cover',
@@ -86,10 +91,12 @@ const NewsList = () => {
       {filteredNews.length > 0 && (
         <div className="latest-news" onClick={() => handleNewsClick(filteredNews[0].id)}>
           <div className="latest-news-content">
-            <img 
-              src={filteredNews[0].main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`} 
-              alt={filteredNews[0].title} 
-              className="latest-news-image" 
+            <img
+              src={filteredNews[0].main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`}
+              alt={filteredNews[0].title}
+              className="latest-news-image"
+              width={450}
+              height={400}
             />
             <div className="latest-news-text">
               <h2>{filteredNews[0].title}</h2>
@@ -109,9 +116,11 @@ const NewsList = () => {
       <div className="news-grid">
         {currentNews.map((article) => (
           <div key={article.id} className="news-item" onClick={() => handleNewsClick(article.id)}>
-            <img 
-              src={article.main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`} 
-              alt={article.title} 
+            <img
+              src={article.main_image || `${process.env.PUBLIC_URL}/EdenWhite.webp`}
+              alt={article.title}
+              width={360}
+              height={150}
             />
             <h3>{article.title}</h3>
             <p>{getPreviewText(article.content, 105)}</p>
@@ -137,8 +146,7 @@ const NewsList = () => {
           </button>
         ))}
       </div>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
   );
 };

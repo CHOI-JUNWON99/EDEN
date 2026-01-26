@@ -96,6 +96,10 @@ button:hover {
   color: #000000; /* 텍스트 색상 설정 */
 }
 
+.news-container {
+  min-height: 100vh; /* 최소 높이 설정으로 CLS 방지 */
+}
+
 .latest-news {
   display: flex;
   justify-content: center;

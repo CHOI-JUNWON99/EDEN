@@ -7,10 +7,9 @@ function Electric() {
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech3/EP.webp'})`,
       }}>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
     );
   }
-  
+
   export default Electric;

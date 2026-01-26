@@ -94,6 +94,13 @@ function MainPage() {
           muted={true}
           playsinline={true}
           className="hero-video-player"
+          config={{
+            file: {
+              attributes: {
+                fetchpriority: 'high'
+              }
+            }
+          }}
         />
       </section>
 
@@ -134,7 +141,7 @@ function MainPage() {
         <div className="services-grid">
           {services.map((service) => (
             <div className="service-row" key={service.title}>
-              <h6 className="service-title">{service.title}</h6>
+              <h3 className="service-title">{service.title}</h3>
               <div className="service-buttons">
                 {service.items.map((item) => (
                   <Button

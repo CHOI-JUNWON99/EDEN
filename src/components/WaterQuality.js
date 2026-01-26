@@ -386,8 +386,7 @@ function WaterQuality() {
           </tbody>
         </table>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
   );
 }

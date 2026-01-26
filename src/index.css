@@ -35,3 +35,12 @@ code {
   padding: 0;
   width: 100%;
 }
+
+/* Spacer utilities */
+.spacer {
+  height: 1.5rem;
+}
+
+.spacer-2x {
+  height: 3rem;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainPage from './components/MainPage';
@@ -40,13 +42,23 @@ import WaterSewerage from './components/WaterSewerage';
 import NavConstruction from './components/NavConstruction';
 import './components/i18n';
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5분간 캐시 유지
+      gcTime: 10 * 60 * 1000,   // 10분 후 가비지 컬렉션
+    },
+  },
+});
+
 function App() {
   return (
-    <Router>
-      <div className="app-container">
-        <Navbar />
-        <main>
-        <Routes>
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <div className="app-container">
+          <Navbar />
+          <main>
+          <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/CompanyMessage" element={<CompanyMessage />} />
           <Route path="/CompanyHistory" element={<CompanyHistory />} />
@@ -85,10 +97,14 @@ function App() {
           <Route path="/NavConstruction" element={<NavConstruction />} />
           {/* 다른 페이지 라우트를 여기에 추가 */}
         </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+      {process.env.NODE_ENV === 'development' && (
+        <ReactQueryDevtools initialIsOpen={false} />
+      )}
+    </QueryClientProvider>
   );
 }
 

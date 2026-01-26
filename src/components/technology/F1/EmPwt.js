@@ -8,10 +8,9 @@ function EmPwt() {
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-PWT.webp'})`,
       }}>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
     );
   }
-  
+
   export default EmPwt;

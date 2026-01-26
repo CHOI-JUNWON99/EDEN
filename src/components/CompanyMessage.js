@@ -29,8 +29,7 @@ function CompanyMessage() {
    <div className="company-message">
       <img src={process.env.PUBLIC_URL + '/CompanyMessage2.webp'} alt="Company Message" className="company-message-image" />
     </div>
-    <div>ㅤ</div>
-    <div>ㅤ</div>
+    <div className="spacer-2x"></div>
     </div>
   );
 }

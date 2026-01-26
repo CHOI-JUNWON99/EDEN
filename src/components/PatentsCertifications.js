@@ -93,7 +93,7 @@ const PatentsCertifications = () => {
         <div className="patents-buttons">
           <button>{t('사업자 등록증 및 보유면허 및 인증현황')}</button>
         </div>
-        <div>ㅤ</div>
+        <div className="spacer"></div>
         <div className="certificates-grid">
           {certificates.map((cert, index) => (
             <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
@@ -119,11 +119,11 @@ const PatentsCertifications = () => {
       </Modal>
 
       <section className="certificates">
-        <div>ㅤ</div>
+        <div className="spacer"></div>
         <div className="patents-buttons">
-          <button>{t('ㅤ특 허ㅤ')}</button>
+          <button>{t('특허')}</button>
         </div>
-        <div>ㅤ</div>
+        <div className="spacer"></div>
         <div className="certificates-grid">
           {patents.map((cert, index) => (
             <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
@@ -147,7 +147,7 @@ const PatentsCertifications = () => {
         <button onClick={closeModal} className="close-button">&times;</button>
         <img src={currentImg} alt="Certificate" className="modal-image" />
       </Modal>
-      <div>ㅤ</div>
+      <div className="spacer"></div>
     </div>
   );
 };

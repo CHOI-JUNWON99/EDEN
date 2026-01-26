@@ -7,10 +7,9 @@ function Tos() {
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech2/TOS.webp'})`
       }}>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
     );
   }
-  
+
   export default Tos;

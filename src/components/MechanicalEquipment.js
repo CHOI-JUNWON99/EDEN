@@ -36,13 +36,11 @@ function MechanicalEquipment() {
       <div style={{ justifyContent: 'center', textAlign: 'center' }}>
         <h2>{t('공사 실적')}</h2>
       </div>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
       <div className="company-message">
         <img src={process.env.PUBLIC_URL + '/Mechanical.webp'} alt={t('Company Message')} className="company-message-image" />
       </div>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
   );
 }

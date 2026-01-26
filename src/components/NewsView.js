@@ -2,46 +2,55 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { doc, getDoc, updateDoc, deleteDoc, increment, Timestamp } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { db } from './firebase';
 import { Button } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import '../css/News.css';
 
+// 뉴스 상세 fetch 함수
+const fetchNewsDetail = async (id) => {
+  const docRef = doc(db, 'news', id);
+  const docSnap = await getDoc(docRef);
+  if (docSnap.exists()) {
+    return { id: docSnap.id, ...docSnap.data() };
+  }
+  throw new Error('뉴스를 찾을 수 없습니다.');
+};
+
 const NewsView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [news, setNews] = useState(null);
+  const queryClient = useQueryClient();
   const [likes, setLikes] = useState(0);
   const [editMode, setEditMode] = useState(false);
   const [editedContent, setEditedContent] = useState('');
   const [editedTitle, setEditedTitle] = useState('');
   const textareaRef = useRef(null);
-  const previewLength = 200; // 글자 수 제한
+  const viewCountedRef = useRef(false);
+  const previewLength = 200;
 
+  // React Query로 뉴스 상세 조회
+  const { data: news, isLoading, error } = useQuery({
+    queryKey: ['news', id],
+    queryFn: () => fetchNewsDetail(id),
+  });
+
+  // 뉴스 데이터가 로드되면 상태 초기화 및 조회수 증가
   useEffect(() => {
-    let isMounted = true;
-
-    const fetchNews = async () => {
-      const docRef = doc(db, 'news', id);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        if (isMounted) {
-          setNews(docSnap.data());
-          setLikes(docSnap.data().likes);
-          setEditedContent(docSnap.data().content);
-          setEditedTitle(docSnap.data().title);
-          await updateDoc(docRef, { views: increment(1) });
-        }
+    if (news) {
+      setLikes(news.likes);
+      setEditedContent(news.content);
+      setEditedTitle(news.title);
+      // 조회수 증가 (최초 로드 시에만)
+      if (!viewCountedRef.current) {
+        viewCountedRef.current = true;
+        const docRef = doc(db, 'news', id);
+        updateDoc(docRef, { views: increment(1) });
       }
-    };
-
-    fetchNews();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [id]);
+    }
+  }, [news, id]);
 
   const handleLike = async () => {
     const docRef = doc(db, 'news', id);
@@ -81,12 +90,15 @@ const NewsView = () => {
       updated_at: Timestamp.fromDate(new Date())
     });
 
-    setNews(prev => ({
+    // React Query 캐시 업데이트
+    queryClient.setQueryData(['news', id], (prev) => ({
       ...prev,
       title: editedTitle,
       content: updatedContent,
       main_image: mainImage
     }));
+    // 목록 캐시도 무효화
+    queryClient.invalidateQueries({ queryKey: ['news'] });
     setEditMode(false);
     alert('게시물이 성공적으로 수정되었습니다.');
   };
@@ -155,6 +167,9 @@ const NewsView = () => {
       </ReactMarkdown>
     );
   };
+
+  if (isLoading) return <div className="news-view-container"><p>로딩 중...</p></div>;
+  if (error) return <div className="news-view-container"><p>에러: {error.message}</p></div>;
 
   return (
     <div className="news-view-container">

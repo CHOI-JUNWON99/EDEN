@@ -8,10 +8,9 @@ function EmNprs() {
         backgroundImage: `url(${process.env.PUBLIC_URL + '/Tech1/EM-NPRS.webp'})`,
       }}>
       </section>
-      <div>ㅤ</div>
-      <div>ㅤ</div>
+      <div className="spacer-2x"></div>
     </div>
     );
   }
-  
+
   export default EmNprs;
