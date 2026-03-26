@@ -1,62 +1,49 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
+import React from 'react';
 import '../css/PatentsCertifications.css';
 import { useTranslation } from 'react-i18next';
 
 const certificates = [
-  { name: '사업자등록증', img: '/Certification1/1-1-1.jpg' },
-  { name: '기업부설연구소\n인정서', img: '/Certification1/1-1-2.jpg' },
-  { name: '여성기업 확인서', img: '/Certification1/1-1-3.jpg' },
-  { name: '중소기업 확인서', img: '/Certification1/1-1-4.png' },
-  { name: '개인 하수 처리\n시설관리업', img: '/Certification1/1-2-1.jpg' },
-  { name: '개인 하수 처리\n설계시공업', img: '/Certification1/1-2-2.jpg' },
-  { name: '기계설비 공사업', img: '/Certification1/1-2-3.jpg' },
-  { name: '대기환경전문공사업', img: '/Certification1/1-2-4.jpg' },
-  { name: '상하수도 설비 공사업', img: '/Certification1/1-3-1.jpg' },
-  { name: '시설물 유지관리업', img: '/Certification1/1-3-2.jpg' },
-  { name: '가축분뇨 처리시설\n설계시공업', img: '/Certification1/1-3-3.jpg' },
-  { name: '토목 공사업', img: '/Certification1/1-3-4.jpg' },
+  { name: '사업자등록증' },
+  { name: '기업부설연구소\n인정서' },
+  { name: '여성기업 확인서' },
+  { name: '중소기업 확인서' },
+  { name: '개인 하수 처리\n시설관리업' },
+  { name: '개인 하수 처리\n설계시공업' },
+  { name: '기계설비 공사업' },
+  { name: '대기환경전문공사업' },
+  { name: '상하수도 설비 공사업' },
+  { name: '시설물 유지관리업' },
+  { name: '가축분뇨 처리시설\n설계시공업' },
+  { name: '토목 공사업' },
 ];
 
 const patents = [
-  { name: '생물학적 여재를\n이용한 오폐수\n처리 장치', img: '/Certification2/1-1.jpg' },
-  { name: '상징수 배출용\n디켄터 이동장치', img: '/Certification2/1-2.jpg' },
-  { name: '오폐수 처리수용\n자외선 램프의\n세척장치', img: '/Certification2/1-3.jpg' },
-  { name: '펌프 가압수 압착력에\n의한 하폐수 방류수 내\n부유물질 여과장치', img: '/Certification2/1-4.jpg' },
-  { name: '하폐수처리장의\n자동청소 스크린장치', img: '/Certification2/2-1.jpg' },
-  { name: '링크체인\n컨베이어 시스템', img: '/Certification2/2-2.jpg' },
-  { name: '하폐수 처리수\n재이용 장치 및 방법', img: '/Certification2/2-3.jpg' },
-  { name: '폐수의 인 농축\n회수장치 및 방법', img: '/Certification2/2-4.jpg' },
-  { name: '패키지형 상수도\n고도정수 처리시설', img: '/Certification2/3-1.jpg' },
-  { name: '초기우수 제어 및\n비점오염원 처리장치와 처리방법', img: '/Certification2/3-2.jpg' },
-  { name: '유입가스 분배기를\n이용한 생물학적\n악취 처리시설', img: '/Certification2/3-3.jpg' },
-  { name: '미생물을 이용한\n악취 및 폐가스\n정화 처리장치', img: '/Certification2/3-4.jpg' },
-  { name: '질소가스를 이용한\n배기가스 내의 휘발성\n유기 화합물 회수장치', img: '/Certification2/4-1.jpg' },
-  { name: '도장부스의\n환기시스템', img: '/Certification2/4-2.jpg' },
-  { name: '체인형 회전체를\n이용한 VOCs\n농축 제거 시스템', img: '/Certification2/4-3.jpg' },
-  { name: '변기의 원심배출장치', img: '/Certification2/4-4.jpg' },
+  { name: '생물학적 여재를\n이용한 오폐수\n처리 장치' },
+  { name: '상징수 배출용\n디켄터 이동장치' },
+  { name: '오폐수 처리수용\n자외선 램프의\n세척장치' },
+  { name: '펌프 가압수 압착력에\n의한 하폐수 방류수 내\n부유물질 여과장치' },
+  { name: '하폐수처리장의\n자동청소 스크린장치' },
+  { name: '링크체인\n컨베이어 시스템' },
+  { name: '하폐수 처리수\n재이용 장치 및 방법' },
+  { name: '폐수의 인 농축\n회수장치 및 방법' },
+  { name: '패키지형 상수도\n고도정수 처리시설' },
+  { name: '초기우수 제어 및\n비점오염원 처리장치와 처리방법' },
+  { name: '유입가스 분배기를\n이용한 생물학적\n악취 처리시설' },
+  { name: '미생물을 이용한\n악취 및 폐가스\n정화 처리장치' },
+  { name: '질소가스를 이용한\n배기가스 내의 휘발성\n유기 화합물 회수장치' },
+  { name: '도장부스의\n환기시스템' },
+  { name: '체인형 회전체를\n이용한 VOCs\n농축 제거 시스템' },
+  { name: '변기의 원심배출장치' },
 ];
 
 const PatentsCertifications = () => {
   const { t } = useTranslation();
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentImg, setCurrentImg] = useState('');
-
-  const openModal = (img) => {
-    setCurrentImg(img);
-    setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-    setCurrentImg('');
-  };
 
   return (
     <div className="intellectual-property">
-      <section 
+      <section
         className="hero-section"
-        style={{ 
+        style={{
           backgroundImage: `url(${process.env.PUBLIC_URL + '/Patents.webp'})`,
           width: '100%',
           height: '400px',
@@ -96,7 +83,7 @@ const PatentsCertifications = () => {
         <div className="spacer"></div>
         <div className="certificates-grid">
           {certificates.map((cert, index) => (
-            <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
+            <div key={index} className="certificate">
               <p>{cert.name.split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {t(line)}
@@ -107,16 +94,6 @@ const PatentsCertifications = () => {
           ))}
         </div>
       </section>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Certificate Image"
-        className="modal"
-        overlayClassName="overlay"
-      >
-        <button onClick={closeModal} className="close-button">&times;</button>
-        <img src={currentImg} alt="Certificate" className="modal-image" />
-      </Modal>
 
       <section className="certificates">
         <div className="spacer"></div>
@@ -126,7 +103,7 @@ const PatentsCertifications = () => {
         <div className="spacer"></div>
         <div className="certificates-grid">
           {patents.map((cert, index) => (
-            <div key={index} className="certificate" onClick={() => openModal(cert.img)}>
+            <div key={index} className="certificate">
               <p>{cert.name.split('\n').map((line, idx) => (
                 <React.Fragment key={idx}>
                   {t(line)}
@@ -137,16 +114,6 @@ const PatentsCertifications = () => {
           ))}
         </div>
       </section>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Certificate Image"
-        className="modal"
-        overlayClassName="overlay"
-      >
-        <button onClick={closeModal} className="close-button">&times;</button>
-        <img src={currentImg} alt="Certificate" className="modal-image" />
-      </Modal>
       <div className="spacer"></div>
     </div>
   );
