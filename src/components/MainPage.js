@@ -86,7 +86,7 @@ function MainPage() {
     <div className="main-page">
       <section className="hero-video-section">
         <ReactPlayer
-          url={`${process.env.PUBLIC_URL}/EDEN_1080.mp4`}
+          url="https://firebasestorage.googleapis.com/v0/b/eandtech-f8efe.appspot.com/o/EDEN_1080.mp4?alt=media"
           width="100%"
           height="100%"
           playing={true}

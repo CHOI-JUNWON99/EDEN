@@ -22,7 +22,7 @@ function EmSbr() {
         <section className="vision-section">
           <div className="vision-video">
               <ReactPlayer 
-                url={`${process.env.PUBLIC_URL}/Tech1/EM-SBR.mp4`} 
+                url="https://firebasestorage.googleapis.com/v0/b/eandtech-f8efe.appspot.com/o/EM-SBR.mp4?alt=media" 
                 controls 
                 width="1500px" 
                 height="800px" 
