@@ -17,19 +17,19 @@ function AirManagement() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/air3-1.webp" alt={t('정기적인 점검 및 유지보수')} className="image"/>
+          <img src="/MainPageOurService/air3-1.webp" alt={t('정기적인 점검 및 유지보수')} className="water-image"/>
           <p>{t('정기적인 점검 및 유지보수')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air3-2.webp" alt={t('신속한 문제 해결')} className="image"/>
+          <img src="/MainPageOurService/air3-2.webp" alt={t('신속한 문제 해결')} className="water-image"/>
           <p>{t('신속한 문제 해결')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water3-3.webp" alt={t('운영 효율성 극대화')} className="image"/>
+          <img src="/MainPageOurService/water3-3.webp" alt={t('운영 효율성 극대화')} className="water-image"/>
           <p>{t('운영 효율성 극대화')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air3-4.webp" alt={t('고객 맞춤형 관리 서비스')} className="image"/>
+          <img src="/MainPageOurService/air3-4.webp" alt={t('고객 맞춤형 관리 서비스')} className="water-image"/>
           <p>{t('지속적인 사후 관리 서비스')}</p>
         </div>
       </section>

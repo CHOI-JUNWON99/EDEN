@@ -17,19 +17,19 @@ function Construction() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/3-1-1.webp" alt={t('인프라 개선')} className="image" />
+          <img src="/MainPageOurService/3-1-1.webp" alt={t('인프라 개선')} className="water-image" />
           <p>{t('인프라 개선')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-1-2.webp" alt={t('도시 개발 지원')} className="image" />
+          <img src="/MainPageOurService/3-1-2.webp" alt={t('도시 개발 지원')} className="water-image" />
           <p>{t('도시 개발 지원')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-1-3.webp" alt={t('최신 토목 기술 적용')} className="image" />
+          <img src="/MainPageOurService/3-1-3.webp" alt={t('최신 토목 기술 적용')} className="water-image" />
           <p>{t('철저한 현장 관리')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-1-4.webp" alt={t('환경 친화적 시공 방법')} className="image" />
+          <img src="/MainPageOurService/3-1-4.webp" alt={t('환경 친화적 시공 방법')} className="water-image" />
           <p>{t('효율적이고 경제적인 설계')}</p>
         </div>
       </section>

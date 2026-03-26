@@ -17,19 +17,19 @@ function WaterDesign() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/water1-1.webp" alt={t('맞춤형 설계 솔루션 제공')} className="image" />
+          <img src="/MainPageOurService/water1-1.webp" alt={t('맞춤형 설계 솔루션 제공')} className="water-image" />
           <p>{t('맞춤형 설계 솔루션 제공')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-2.webp" alt={t('최신 기술 도입')} className="image" />
+          <img src="/MainPageOurService/water1-2.webp" alt={t('최신 기술 도입')} className="water-image" />
           <p>{t('최신 기술 도입')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-3.webp" alt={t('효율적이고 경제적인 설계')} className="image" />
+          <img src="/MainPageOurService/water1-3.webp" alt={t('효율적이고 경제적인 설계')} className="water-image" />
           <p>{t('효율적이고 경제적인 설계')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/water1-4.webp" alt={t('환경 규제 준수')} className="image" />
+          <img src="/MainPageOurService/water1-4.webp" alt={t('환경 규제 준수')} className="water-image" />
           <p>{t('환경 규제 준수')}</p>
         </div>
       </section>

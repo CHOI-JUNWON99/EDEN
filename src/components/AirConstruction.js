@@ -17,19 +17,19 @@ function AirConstruction() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/air2-1.webp" alt={t('철저한 현장 관리')} className="image"/>
+          <img src="/MainPageOurService/air2-1.webp" alt={t('철저한 현장 관리')} className="water-image"/>
           <p>{t('철저한 현장 관리')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air2-2.webp" alt={t('최신 시공 기술 적용')} className="image"/>
+          <img src="/MainPageOurService/air2-2.webp" alt={t('최신 시공 기술 적용')} className="water-image"/>
           <p>{t('최신 시공 기술 적용')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air2-3.webp" alt={t('환경 친화적 시공 방법')} className="image"/>
+          <img src="/MainPageOurService/air2-3.webp" alt={t('환경 친화적 시공 방법')} className="water-image"/>
           <p>{t('환경 친화적 시공 방법')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/air2-4.webp" alt={t('고객 맞춤형 시공 서비스')} className="image"/>
+          <img src="/MainPageOurService/air2-4.webp" alt={t('고객 맞춤형 시공 서비스')} className="water-image"/>
           <p>{t('고객 맞춤형 시공 서비스')}</p>
         </div>
       </section>

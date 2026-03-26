@@ -1,113 +1,115 @@
 .water-treatment-page {
-    font-family: 'Arial', sans-serif;
-    padding: 2rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  .intro-section {
-    margin-bottom: 3rem;
-  }
-  
-  .intro-section h2 {
-    font-size: 2.5rem;
-    color: #475569;
-    margin-bottom: 1rem;
-  }
-  
-  .intro-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  .image {
-    width: 100%; /* 컨테이너의 너비에 맞추기 */
-    height: 400px; /* 원하는 고정 높이 설정 */
-    display: block;
-    margin-bottom: 1rem;
-    object-fit: cover; /* 이미지가 컨테이너에 맞게 잘리거나 확장되도록 설정 */
-  }
-  
+  font-family: "Arial", sans-serif;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.intro-section {
+  margin-bottom: 3rem;
+}
+
+.intro-section h2 {
+  font-size: 2.5rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.water-image {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.image-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.image-placeholder {
+  background-color: #ddd;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.image-item p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #475569;
+  margin: 0.5rem 0 0;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
   .image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  .image-item {
-    width: calc(50% - 2rem);
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 1rem;
-  }
-  
-  .image-placeholder {
-    background-color: #ddd;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: #777;
-    margin-bottom: 1rem;
-  }
-  
-  .image-item p {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #475569;
-  }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 768px) {
-    .image-item {
-      width: 100%;
-    }
-  }
-  
-  .company-message {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
-  }
-  
-  .company-message-image {
-    width: 100%;
-    max-width: 1000px; /* 원하는 최대 너비로 설정 */
-    height: auto; /* 비율을 유지하면서 높이를 자동으로 조절 */
+}
+
+.company-message {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+
+.company-message-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
   }
 
-  @media (max-width: 768px) {
-    .hero-section {
-      height: 300px;
-    }
-  
-    h2 {
-      font-size: 2rem;
-    }
-  
-    .service-button {
-      width: 100%;
-      font-size: 1rem;
-    }
-  
-    .services-grid {
-      gap: 1rem;
-    }
-  
-    .vision-video {
-      width: 100%;
-    }
-  
-    .vision-video > div {
-      padding-top: 56.25%;
-    }
+  h2 {
+    font-size: 2rem;
   }
+
+  .service-button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
+
+  .vision-video {
+    width: 100%;
+  }
+
+  .vision-video > div {
+    padding-top: 56.25%;
+  }
+}

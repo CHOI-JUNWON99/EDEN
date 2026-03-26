@@ -1,6 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import '../css/CompanyHistory.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "../css/CompanyHistory.css";
 
 const events = [
   {
@@ -18,7 +18,9 @@ const events = [
   },
   {
     year: 2004,
-    achievements: ["EM(Eco-Mecanism)-System을 이용한 하, 폐수 고도처리시설 개발 착수"],
+    achievements: [
+      "EM(Eco-Mecanism)-System을 이용한 하, 폐수 고도처리시설 개발 착수",
+    ],
   },
   {
     year: 2005,
@@ -181,26 +183,29 @@ const CompanyHistory = () => {
   const scrollToYear = (year) => {
     const element = document.getElementById(`year-${year}`);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="company-history">
       <div className="history-buttons">
-        <button onClick={() => scrollToYear(2002)}>{t('2002년~2010년')}</button>
-        <button onClick={() => scrollToYear(2011)}>{t('2011년~2020년')}</button>
-        <button onClick={() => scrollToYear(2021)}>{t('2021년~현재')}</button>
+        <button onClick={() => scrollToYear(2002)}>{t("2002년~2010년")}</button>
+        <button onClick={() => scrollToYear(2011)}>{t("2011년~2020년")}</button>
+        <button onClick={() => scrollToYear(2021)}>{t("2021년~현재")}</button>
       </div>
       <div className="timeline">
         {events.map((event, index) => (
           <div
             key={event.year}
             id={`year-${event.year}`}
-            className={`timeline-event ${index % 2 === 0 ? 'right' : 'left'}`}
+            className={`timeline-event ${index % 2 === 0 ? "right" : "left"}`}
           >
             <div className="timeline-content">
-              <h3>{event.year}{t('년')}</h3>
+              <h3>
+                {event.year}
+                {t("년")}
+              </h3>
               <ul>
                 {event.achievements.map((achievement, i) => (
                   <li key={i}>{t(achievement)}</li>

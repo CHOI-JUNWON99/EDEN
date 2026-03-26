@@ -17,19 +17,19 @@ function MechanicalEquipment() {
       </section>
       <section className="image-grid">
         <div className="image-item">
-          <img src="/MainPageOurService/3-3-1.webp" alt={t('최신 기계 설비 기술 적용')} className="image" />
+          <img src="/MainPageOurService/3-3-1.webp" alt={t('최신 기계 설비 기술 적용')} className="water-image" />
           <p>{t('최신 기계 설비 기술 적용')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-3-2.webp" alt={t('안정적이고 효율적인 설비 구축')} className="image" />
+          <img src="/MainPageOurService/3-3-2.webp" alt={t('안정적이고 효율적인 설비 구축')} className="water-image" />
           <p>{t('안정적이고 효율적인 설비 구축')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-3-3.webp" alt={t('철저한 현장 관리')} className="image" />
+          <img src="/MainPageOurService/3-3-3.webp" alt={t('철저한 현장 관리')} className="water-image" />
           <p>{t('철저한 현장 관리')}</p>
         </div>
         <div className="image-item">
-          <img src="/MainPageOurService/3-3-4.webp" alt={t('고객 맞춤형 시공 서비스')} className="image" />
+          <img src="/MainPageOurService/3-3-4.webp" alt={t('고객 맞춤형 시공 서비스')} className="water-image" />
           <p>{t('운영 효율성 극대화')}</p>
         </div>
       </section>
